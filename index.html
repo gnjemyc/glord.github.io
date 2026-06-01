@@ -30,6 +30,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col pb-20">
 
+
   <!-- TOP HEADER / BRANDING -->
   <header class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white sticky top-0 z-40 shadow-md">
     <div class="px-4 py-3 flex justify-between items-center max-w-md mx-auto">
@@ -52,6 +53,26 @@
       </div>
     </div>
   </header>
+
+
+  <!-- FAMILY BUDGET SUMMARY ESTIMATE -->
+  <div class="max-w-md w-full mx-auto px-4 mt-4">
+    <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-4 shadow-sm border border-amber-100 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="p-2.5 bg-amber-500/10 rounded-xl text-amber-700">
+          <i class="fa-solid fa-calculator text-lg animate-bounce"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs text-amber-800">家族 11 人門票預算估算</h4>
+          <p class="text-[10px] text-amber-600">8大(含長輩) + 2小(5歲) + 1幼(不到2歲)</p>
+        </div>
+      </div>
+      <div class="text-right">
+        <span class="text-xs text-slate-500 block">全行程估計</span>
+        <span class="text-lg font-black text-amber-700" id="familyBudgetTotal">--</span>
+      </div>
+    </div>
+  </div>
 
   <!-- MAIN APP WRAPPER -->
   <main class="flex-1 max-w-md w-full mx-auto px-4 py-4 space-y-6" id="itineraryContent">
@@ -102,6 +123,7 @@
       </button>
     </div>
   </nav>
+
 
   <!-- MODAL: PROTECTION TIPS (防護罩) -->
   <div id="tipsModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
@@ -177,7 +199,7 @@
             <i class="fa-solid fa-utensils text-emerald-500"></i> 美食推薦清單
           </h3>
           <ul class="space-y-2 text-xs text-slate-600 pl-5 list-disc">
-            <li><strong>熊本名產：</strong>勝烈亭豬排（有超軟嫩豬排，非常適合長輩和幼兒）、黑亭拉麵、赤牛丼。</li>
+            <li><strong>熊本名產：</strong>勝烈亭豬排（有超軟嫩豬排，非常適合長輩 and 幼兒）、黑亭拉麵、赤牛丼。</li>
             <li><strong>由布院必吃：</strong>金鱗湖畔蕎麥麵、B-Speak 瑞士捲、金賞可樂餅。</li>
             <li><strong>福岡名產：</strong>博多豚骨拉麵、牛腸鍋（若長輩不吃牛可安排烤雞肉串屋台或水炊鍋，幼兒也可安心喝雞湯）。</li>
           </ul>
@@ -188,6 +210,7 @@
       </div>
     </div>
   </div>
+
 
   <script>
     // DATA SOURCE
@@ -202,20 +225,43 @@
           {
             name: "熊本城 & 櫻之馬場 城彩苑",
             time: "14:00 - 17:30",
-            image: "https://images.unsplash.com/photo-1542640244-7e672d6cef21?auto=format&fit=crop&w=600&q=80",
-            imageDesc: "修復重建後的壯麗熊本城",
+            // Special dual-image view config
+            splitImages: [
+              { url: "https://www.bring-you.info/imgs/2018/09/Kumamoto-Castle-2024-10.jpg?auto=format&fit=crop&w=400&q=80", label: "左：熊本城" },
+              { url: "https://i0.wp.com/boo2k.com/wp-content/uploads/2023/08/IMG_6969.jpg?auto=format&fit=crop&w=400&q=80", label: "右：城彩苑" }
+            ],
+            imageDesc: "左：雄偉熊本城 / 右：江戶風情城彩苑",
             desc: "修復後的熊本城規劃了極為完善的無障礙步道與電梯設施，推嬰兒車或長輩散步完全無負擔。下方的城彩苑則充滿江戶風情，是品嚐熊本特色點心（如陣太鼓、馬肉可樂餅、牛奶霜淇淋）的最佳慢活起點。",
             gmap: "https://www.google.com/maps/search/?api=1&query=熊本城",
+            hours: "09:00 - 17:00 (天守閣最晚入場16:30)",
+            pricing: {
+              adult: "800日圓 (高校生以上)",
+              child: "300日圓 (小學・中學生)",
+              senior: "800日圓 (長輩一般票價)",
+              note: "學齡前兒童 (2歲/5歲孩子們) 免費！"
+            },
+            calcEstimate: 6400, // 8大 * 800 (長輩非熊本市民一般無折扣) + 3小免費
             kidsTip: "👶 備有哺乳室與寬敞洗手間，城彩苑平坦好推車。",
-            seniorTip: "👵 長輩可租用輕便輪椅，無障礙坡道一路延伸至天守閣前。"
+            seniorTip: "👵 長輩友善，無障礙坡道一路延伸至天守閣前。"
           },
           {
             name: "晚餐：勝烈亭豬排 (辛島本店) 或 黑亭拉麵",
             time: "18:00",
-            image: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=600&q=80",
+            splitImages: [
+              { url: "https://img.bigfang.tw/2025/03/1743334246-4efdd2f969559e8b1c92e99f32ded48e.jpg?auto=format&fit=crop&w=400&q=80", label: "左：熊本城" },
+              { url: "https://choyce.tw/wp-content/uploads/pixnet/5fe8daf5f79f041cc29c2cce3dab37ef.jpg?auto=format&fit=crop&w=400&q=80", label: "右：城彩苑" }
+            ],
             imageDesc: "在地超人氣日式炸豬排料理",
             desc: "勝烈亭的炸豬排肉質細緻香甜，入口即化，非常方便長輩與幼兒咀嚼，且備有兒童餐椅與兒童餐具。辛島本店寬敞，是家庭聚餐的好去處。",
             gmap: "https://www.google.com/maps/search/?api=1&query=勝烈亭+辛島本店",
+            hours: "11:00 - 21:30 (最後點餐21:00)",
+            pricing: {
+              adult: "單點約 1,500 ~ 2,800 日圓",
+              child: "兒童餐約 800 ~ 1,000 日圓",
+              senior: "同成人價",
+              note: "餐飲消費，無基本門票限制"
+            },
+            calcEstimate: 0, // 無門票
             kidsTip: "👶 有提供美味的兒童餐與專屬餐具，幼童最愛。",
             seniorTip: "👵 特級腰內豬排極其軟嫩，牙口不好的長輩也讚不絕口。"
           }
@@ -232,20 +278,36 @@
           {
             name: "草千里 & 阿蘇火山",
             time: "10:00 - 12:30",
-            image: "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80",
+            image: "https://res.klook.com/images/w_1200,h_630,c_fill,q_65/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/qulwwxcuyf71hpr53sy0/%E7%86%8A%E6%9C%AC%E9%98%BF%E8%98%87%E4%B8%AD%E5%B6%BD%E7%81%AB%E5%B1%B1%E5%8F%A3%E5%8F%8A%E8%8D%89%E5%8D%83%E9%87%8C%E4%B8%80%E6%97%A5%E7%A7%81%E4%BA%BA%E6%97%85%E9%81%8A%E5%9C%98.jpg?auto=format&fit=crop&w=600&q=80",
             imageDesc: "阿蘇大草原與壯觀火山",
             desc: "草千里之濱是一片無邊無際的綠色草原，點綴著放牧牛馬與雨水池。火山空氣清新，寬闊的草地極適合 5 歲小寶貝奔跑嬉戲，更可自費體驗由專人牽行的短程騎馬，長輩與孩子都能放心安全遊玩。",
             gmap: "https://www.google.com/maps/search/?api=1&query=阿蘇草千里",
+            hours: "24小時開放 (騎馬俱樂部：09:00 - 16:00)",
+            pricing: {
+              adult: "免費入園 (草千里停車費 500日圓/車)",
+              child: "騎馬體驗：單人1,500日圓起 / 雙人2,500日圓",
+              senior: "同成人價",
+              note: "騎馬A方案(約5分鐘)適合親子(大人+幼童)共乘"
+            },
+            calcEstimate: 0, // 門票免費 (活動與停車自費)
             kidsTip: "👶 可在大草原奔跑放電，或體驗專人牽引的親子騎馬。",
             seniorTip: "👵 景觀餐廳備有座位，可在此一邊喝著名的阿蘇牛奶一邊看火山，不用走太多路。"
           },
           {
             name: "午餐：品嚐阿蘇經典「赤牛丼」",
             time: "12:30 - 13:30",
-            image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+            image: "https://qqblog.tw/wp-content/uploads/2024/06/YAMAYAS001.jpg?auto=format&fit=crop&w=600&q=80",
             imageDesc: "鮮美多汁的阿蘇赤牛蓋飯",
             desc: "享用阿蘇火山地區特有的放牧赤牛，低脂肪、肉質軟嫩，製成蓋飯鮮甜不油膩，是一定要帶長輩跟大人口嚐的當地逸品。",
             gmap: "https://www.google.com/maps/search/?api=1&query=阿蘇あか牛丼",
+            hours: "11:00 - 15:30 (各名店營業時間有異)",
+            pricing: {
+              adult: "赤牛丼約 2,000 ~ 3,000 日圓",
+              child: "備有兒童小碗或烏龍麵/咖哩",
+              senior: "同成人價",
+              note: "餐飲消費，無基本門票限制"
+            },
+            calcEstimate: 0,
             kidsTip: "👶 備有全熟熟牛肉片或白飯配汁，小小孩吃得很香。",
             seniorTip: "👵 赤牛脂肪含量低、富含健康紅肉，對長輩健康無負擔。"
           },
@@ -256,6 +318,14 @@
             imageDesc: "餵食小熊與草泥馬互動體驗",
             desc: "《狗狗猩猩大冒險》小龐與詹姆士的家！園內可以親手餵食各種大小熊、羊駝，還有精彩的動物明星秀。對 2 歲及 5 歲小孩來說是親近動物的天堂，互動溫和安全。",
             gmap: "https://www.google.com/maps/search/?api=1&query=阿蘇卡德利動物樂園",
+            hours: "09:30 - 17:30 (週末特定日/夏季)",
+            pricing: {
+              adult: "2,900日圓 (週六日假日/特定日票價)",
+              child: "1,400日圓 (小中學) / 3歲以上幼兒 800日圓",
+              senior: "長輩同成人票價 (2026/4新制無單獨敬老票)",
+              note: "9/13(六)為假日，票價: 8大*2900 + 2小*800 + 1幼(免費)"
+            },
+            calcEstimate: 24800, // 8 * 2900 + 2 * 800 = 24800 (1yo free)
             kidsTip: "👶 2歲與5歲最期待的近距離餵動物！舞台表演生動，逗得孩子哈哈大笑。",
             seniorTip: "👵 秀場內部有輪椅無障礙席，長輩坐著看表演十分舒適。"
           }
@@ -275,6 +345,14 @@
             imageDesc: "叢林巴士餵食獅子大象",
             desc: "11人家族最震撼的重頭戲！搭乘特製「叢林巴士」，用長鐵夾直接將肉片或水果送到獅子、熊和大象的嘴裡。這種不可思議的近距離體驗，保證無論是 2 歲或長輩都會興奮得尖叫不斷。",
             gmap: "https://www.google.com/maps/search/?api=1&query=九州自然動物園",
+            hours: "09:00 - 16:30 (最後野生動物入園16:00)",
+            pricing: {
+              adult: "入園費 2,600日圓 + 叢林巴士 1,500日圓",
+              child: "4歲以上入園 1,500日圓 + 巴士 1,500日圓",
+              senior: "長輩同成人票價 (2,600 + 1,500)",
+              note: "不到2歲幼童若在大人膝上不佔位免巴士票；5歲2位需購票"
+            },
+            calcEstimate: 38800, // (8 * 4100) + (2 * 3000) = 32800 + 6000 = 38800 (1yo free lap seat)
             kidsTip: "👶 2歲與5歲可坐內側由爸媽抱著一起餵食。叢林巴士強烈建議提前預約！",
             seniorTip: "👵 全程坐在堅固安全的車上，免去大步行走的勞累，非常適合長輩。"
           },
@@ -285,6 +363,14 @@
             imageDesc: "鈷藍色如海般的海地獄",
             desc: "避開週日擠爆的由布院，今天下午先前往別府最負盛名的「海地獄」。這裡庭園規劃極美、無障礙設施極佳，更設有大型免費足湯，長輩與大人可以一邊泡腳，一邊享受溫泉鄉裊裊白煙的奇特風景。",
             gmap: "https://www.google.com/maps/search/?api=1&query=別府海地獄",
+            hours: "08:00 - 17:00 (全年無休)",
+            pricing: {
+              adult: "單一地獄票 450日圓",
+              child: "小學/中學 200日圓 / 幼兒學齡前免費",
+              senior: "同成人價 450日圓",
+              note: "若要參觀多個地獄可買共通券，僅看海地獄最輕鬆"
+            },
+            calcEstimate: 3600, // 8 * 450 = 3600 (3 kids under elementary are free)
             kidsTip: "👶 煙霧瀰漫與湛藍色的池水會勾起孩子無限好奇，記得牽好孩子防止燙傷。",
             seniorTip: "👵 提供平坦足湯浴池，可以泡腳舒緩走了一天的腳部疲累。"
           }
@@ -304,6 +390,14 @@
             imageDesc: "晨霧縹緲的金鱗湖與溫泉街",
             desc: "挑選遊客相對較少的週一清晨前來，是避開大批旅行團的絕招。清晨的金鱗湖如詩如畫，散步起來非常怡人。隨後沿著平坦的湯之坪街道閒晃，吃瑞士捲、可樂餅，全家享受溫柔的漫活時光。",
             gmap: "https://www.google.com/maps/search/?api=1&query=金鱗湖",
+            hours: "各街道商店約 09:00 - 17:00",
+            pricing: {
+              adult: "免費散步",
+              child: "免費散步",
+              senior: "免費散步",
+              note: "街道為開放式空間，無任何門票費用"
+            },
+            calcEstimate: 0,
             kidsTip: "👶 湯之坪有許多特色宮崎駿、史努比商店，吸引小小孩眼球！",
             seniorTip: "👵 金鱗湖畔道路相對平坦，長輩早上散步精神特別好，拍照留念絕佳地點。"
           },
@@ -314,7 +408,15 @@
             imageDesc: "福岡新型巨型購物商場",
             desc: "中餐後在車上移動 (1.5 ~ 2小時)，剛好是 3 位小孩在車上午睡的「完美結界」。抵達 LaLaport 後，大人可以瘋狂採購特產、藥妝，與 1:1 實物大鋼彈打卡拍照；長輩可在明亮寬敞的商場咖啡廳休息、享用下午茶，不受戶外高溫或風吹日曬干擾。",
             gmap: "https://www.google.com/maps/search/?api=1&query=LaLaport+福岡",
-            kidsTip: "👶 小孩睡醒剛好到。商場內有超好玩的兒童遊樂中心、玩具賣場和美食廣場。",
+            hours: "物販商店：10:00 - 21:00 / 餐飲區：11:00 - 22:00",
+            pricing: {
+              adult: "免門票入館",
+              child: "免門票入館 (室內遊樂區另計)",
+              senior: "免門票入館",
+              note: "全室內無障礙大商城，鋼彈打卡完全免費"
+            },
+            calcEstimate: 0,
+            kidsTip: "👶 小孩睡醒剛好到。商場內有超好玩的兒童遊樂中心、玩具賣場 and 美食廣場。",
             seniorTip: "👵 全室內無障礙大商城，走累了到處都有休息椅與景觀咖啡廳，非常舒適。"
           }
         ]
@@ -333,6 +435,14 @@
             imageDesc: "室內遊樂天堂 - 麵包超人世界",
             desc: "今天最後的主角！整整 3-4 小時都在室內吹冷氣。讓孩子們狂玩沙坑、彈力球，看人偶舞台熱舞，大人和長輩則能在館內餐廳輕鬆解決午餐。雖然推車不能進展場，但有大型停放區，這將是寶寶九州行最開心的回憶！",
             gmap: "https://www.google.com/maps/search/?api=1&query=福岡麵包超人博物館",
+            hours: "10:00 - 17:00 (最後入場16:00)",
+            pricing: {
+              adult: "2,000 ~ 2,200日圓 (浮動票價，平日均價2000)",
+              child: "1歲以上同成人票價 (2,000 ~ 2,200日圓)",
+              senior: "長輩同成人票價",
+              note: "不滿1歲免費；我們有8大3小(1歲半+5歲兩位都要購票)"
+            },
+            calcEstimate: 22000, // 11人 * 2000 = 22000
             kidsTip: "👶 2歲與5歲孩子的天堂！如果是9月壽星，記得在櫃檯領取精美生日卡和胸章！",
             seniorTip: "👵 舞台表演區有階梯座位可坐著休息。看着孫子和麵包超人唱跳，長輩的心都要融化了。"
           },
@@ -343,6 +453,14 @@
             imageDesc: "搭機返台、滿載而歸",
             desc: "麵包超人購物中心距離福岡機場僅需約 15 分鐘包車車程，時間抓得剛剛好。上車後小孩保證直接秒睡，讓大人在機場可以輕鬆辦理登機，並在免稅店做最後的土產伴手禮採購，畫下完美句點。",
             gmap: "https://www.google.com/maps/search/?api=1&query=福岡空港",
+            hours: "24小時開放 (依各航班時間為準)",
+            pricing: {
+              adult: "免費進入機場大廳",
+              child: "免費進入機場大廳",
+              senior: "免費進入機場大廳",
+              note: "無門票限制"
+            },
+            calcEstimate: 0,
             kidsTip: "👶 機場有親子廁所和遊樂區，上機前再換一次尿布最安穩。",
             seniorTip: "👵 機場有無障礙服務，包車直送出境大廳，不用拉行李走太遠。"
           }
@@ -352,11 +470,26 @@
 
     let currentDay = 1;
 
+
     // INIT APP
     function init() {
+      calculateTotalBudget();
       renderTabs();
       renderDayContent(currentDay);
       loadDriverInfo();
+    }
+
+    // CALCULATE ENTIRE BUDGET
+    function calculateTotalBudget() {
+      let sum = 0;
+      tourData.forEach(day => {
+        day.spots.forEach(spot => {
+          if (spot.calcEstimate) {
+            sum += spot.calcEstimate;
+          }
+        });
+      });
+      document.getElementById('familyBudgetTotal').innerText = `¥${sum.toLocaleString()}`;
     }
 
     // RENDER HORIZONTAL DAY TABS
@@ -421,6 +554,42 @@
 
       // RENDER EACH SPOT CARD
       data.spots.forEach((spot, idx) => {
+        let imageMarkup = '';
+
+        // Check if we need to render a split screen image layout
+        if (spot.splitImages) {
+          imageMarkup = `
+            <div class="relative h-48 w-full flex bg-slate-200 overflow-hidden">
+              <!-- Left Panel: Kumamoto Castle -->
+              <div class="w-1/2 h-full border-r border-white relative overflow-hidden">
+                <img src="${spot.splitImages[0].url}" alt="熊本城" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/300x200/0d9488/ffffff?text=Kumamoto+Castle';">
+                <span class="absolute bottom-2 left-2 bg-slate-900/70 text-white text-[9px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm shadow">${spot.splitImages[0].label}</span>
+              </div>
+              <!-- Right Panel: Sakura-no-baba Josaien -->
+              <div class="w-1/2 h-full relative overflow-hidden">
+                <img src="${spot.splitImages[1].url}" alt="城彩苑" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/300x200/0f766e/ffffff?text=Josaien';">
+                <span class="absolute bottom-2 right-2 bg-slate-900/70 text-white text-[9px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm shadow">${spot.splitImages[1].label}</span>
+              </div>
+              
+              <!-- Joint Caption Overlay -->
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 pt-8 pointer-events-none">
+                <p class="text-[10px] text-white/95 font-semibold italic flex items-center gap-1">
+                  <i class="fa-solid fa-camera text-teal-400"></i> ${spot.imageDesc}
+                </p>
+              </div>
+            </div>
+          `;
+        } else {
+          imageMarkup = `
+            <div class="relative h-48 w-full bg-slate-200">
+              <img src="${spot.image}" alt="${spot.name}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80';">
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8">
+                <p class="text-[10px] text-white/80 font-medium italic"><i class="fa-solid fa-camera mr-0.5"></i> ${spot.imageDesc}</p>
+              </div>
+            </div>
+          `;
+        }
+
         html += `
           <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden relative">
             <!-- Time Indicator Badge -->
@@ -428,13 +597,8 @@
               <i class="fa-regular fa-clock"></i> ${spot.time}
             </div>
 
-            <!-- Spot Image & Fallback Mechanism -->
-            <div class="relative h-48 w-full bg-slate-200">
-              <img src="${spot.image}" alt="${spot.name}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80';">
-              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8">
-                <p class="text-[10px] text-white/80 font-medium italic"><i class="fa-solid fa-camera mr-0.5"></i> ${spot.imageDesc}</p>
-              </div>
-            </div>
+            <!-- Render Image Area -->
+            ${imageMarkup}
 
             <!-- Content Details -->
             <div class="p-5 space-y-4">
@@ -450,8 +614,40 @@
                 </a>
               </div>
 
+              <!-- NEW SECTION: HOURS & PRICING -->
+              <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100 space-y-2.5 text-xs text-slate-600">
+                <div class="flex items-center gap-2 pb-2 border-b border-slate-200/60">
+                  <i class="fa-solid fa-ticket text-amber-500 text-sm"></i>
+                  <span class="font-extrabold text-slate-700">消費 & 開放時間</span>
+                </div>
+                <div class="grid grid-cols-1 gap-1.5">
+                  <div class="flex justify-between items-start">
+                    <span class="text-slate-500 flex items-center gap-1"><i class="fa-regular fa-clock text-[10px]"></i> 開放時間：</span>
+                    <span class="font-semibold text-slate-800 text-right">${spot.hours || '依現場營業為準'}</span>
+                  </div>
+                  <div class="flex justify-between items-start">
+                    <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-user-tie text-[10px]"></i> 成人票/長者：</span>
+                    <span class="font-semibold text-slate-800 text-right">${spot.pricing?.adult || '免費'}</span>
+                  </div>
+                  <div class="flex justify-between items-start">
+                    <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-child text-[10px]"></i> 兒童/幼童票：</span>
+                    <span class="font-semibold text-slate-800 text-right">${spot.pricing?.child || '免費'}</span>
+                  </div>
+                  <div class="text-[10px] text-amber-600 mt-1 bg-amber-500/5 p-1.5 rounded-md flex items-start gap-1">
+                    <i class="fa-solid fa-circle-exclamation mt-0.5"></i>
+                    <span>${spot.pricing?.note || '無特殊注意事項。'}</span>
+                  </div>
+                  ${spot.calcEstimate ? `
+                  <div class="mt-1 pt-1.5 border-t border-slate-200/40 flex justify-between items-center text-emerald-700 font-semibold text-[11px]">
+                    <span>11人家族門票試算：</span>
+                    <span class="bg-emerald-50 px-2 py-0.5 rounded-md">約 ¥${spot.calcEstimate.toLocaleString()}</span>
+                  </div>
+                  ` : ''}
+                </div>
+              </div>
+
               <!-- KIDS & SENIOR TIPS GRID -->
-              <div class="grid grid-cols-1 gap-2.5 pt-3 border-t border-slate-100">
+              <div class="grid grid-cols-1 gap-2.5 pt-1">
                 <div class="bg-emerald-50/50 p-3 rounded-2xl border border-emerald-100/40 text-xs">
                   <span class="font-extrabold text-emerald-800 flex items-center gap-1 mb-1">
                     <i class="fa-solid fa-child-reaching"></i> 👶 幼童貼心提示 (不到2歲 & 不到5歲)
