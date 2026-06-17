@@ -51,7 +51,8 @@
     <!-- Google Fonts for premium Japanese/Chinese Sans Serif look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
         rel="stylesheet">
 
     <style>
@@ -71,14 +72,21 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .animate-fade-in {
             animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-        
+
         .switch-bg {
             transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
@@ -91,7 +99,8 @@
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-100 sticky top-0 z-40 shadow-sm">
         <div class="px-4 py-3 flex justify-between items-center max-w-md mx-auto">
             <div>
-                <span class="text-[10px] font-black tracking-wider text-primary-600 uppercase">9/12 ~ 9/16 · 11人家族專屬</span>
+                <span class="text-[10px] font-black tracking-wider text-primary-600 uppercase">9/12 ~ 9/16 ·
+                    11人家族專屬</span>
                 <h1 class="text-base font-extrabold flex items-center gap-1.5 text-primary-950">
                     <i class="fa-solid fa-map-location-dot text-primary-500"></i> 九州慢活樂活遊
                 </h1>
@@ -104,9 +113,8 @@
         </div>
 
         <!-- OPTION SELECTOR (方案一 / 方案二) -->
-        <div class="px-4 pb-2.5 flex justify-center max-w-md mx-auto">
+        <!-- <div class="px-4 pb-2.5 flex justify-center max-w-md mx-auto">
             <div class="bg-slate-100/80 p-1 rounded-2xl flex w-full relative border border-slate-200/50">
-                <!-- Sliding active background indicator -->
                 <div id="option-highlight" class="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-white rounded-xl shadow-sm border border-slate-200/30 switch-bg transition-transform duration-300"></div>
 
                 <button onclick="switchOption(1)" id="opt1-btn"
@@ -118,7 +126,7 @@
                     <i class="fa-solid fa-compass text-slate-400"></i> 方案二 (福岡往返)
                 </button>
             </div>
-        </div>
+        </div> -->
 
         <!-- HORIZONTAL DAY SELECTOR (Sticky Tabs) - Only visible when on the Itinerary View -->
         <div id="daySelectorContainer"
@@ -135,14 +143,16 @@
             class="bg-gradient-to-r from-primary-500 to-indigo-600 rounded-3xl p-4.5 shadow-md shadow-primary-500/10 flex items-center justify-between relative overflow-hidden">
             <!-- Decorative light overlay -->
             <div class="absolute right-0 top-0 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
-            
+
             <div class="flex items-center gap-3 relative z-10">
-                <div class="p-2.5 bg-white/20 text-white rounded-2xl border border-white/10 flex items-center justify-center">
+                <div
+                    class="p-2.5 bg-white/20 text-white rounded-2xl border border-white/10 flex items-center justify-center">
                     <i class="fa-solid fa-calculator text-base"></i>
                 </div>
                 <div>
                     <h4 class="font-extrabold text-xs text-white">家族 11 人門票預算估算</h4>
-                    <p id="budgetSubtitle" class="text-[10px] text-primary-100/90 mt-0.5 font-medium">8大(含2位65+長輩) + 2小(5歲) + 1幼(不到2歲)</p>
+                    <p id="budgetSubtitle" class="text-[10px] text-primary-100/90 mt-0.5 font-medium">8大(含2位65+長輩) +
+                        2小(5歲) + 1幼(不到2歲)</p>
                 </div>
             </div>
             <div class="text-right relative z-10">
@@ -178,7 +188,8 @@
             <h2 class="text-base font-black text-primary-950 flex items-center gap-2">
                 <i class="fa-solid fa-utensils text-primary-500"></i> <span id="diningTitle">九州家族必吃美食清單</span>
             </h2>
-            <p id="diningSubtitle" class="text-xs text-slate-500 mt-1.5 font-medium">精選兼顧幼童好咀嚼與長輩少油低鹽健康的頂級在地名產，皆附無障礙及貼心提示。</p>
+            <p id="diningSubtitle" class="text-xs text-slate-500 mt-1.5 font-medium">
+                精選兼顧幼童好咀嚼與長輩少油低鹽健康的頂級在地名產，皆附無障礙及貼心提示。</p>
         </div>
         <div id="diningList" class="space-y-5">
             <!-- Dynamically populated -->
@@ -191,7 +202,8 @@
             <h2 class="text-base font-black text-accent-950 flex items-center gap-2">
                 <i class="fa-solid fa-shield-halved text-accent-500"></i> <span id="tipsTitle">11人家族行前防護罩</span>
             </h2>
-            <p id="tipsSubtitle" class="text-xs text-slate-600 mt-1.5 font-medium">針對 8 大 3 小（包括嫩嬰、長輩）的特殊群體，總結出來的保駕護航安全清單。</p>
+            <p id="tipsSubtitle" class="text-xs text-slate-600 mt-1.5 font-medium">針對 8 大 3
+                小（包括嫩嬰、長輩）的特殊群體，總結出來的保駕護航安全清單。</p>
         </div>
         <div id="tipsList" class="space-y-4">
             <!-- Dynamically populated -->
@@ -201,58 +213,64 @@
 
     <!-- QUICK MEMO FLOATING WIDGET (Driver Info & Weather) -->
     <div class="max-w-md w-full mx-auto px-4 mb-4 mt-2">
-        <div class="bg-white rounded-3xl p-5 shadow-sm border border-slate-100/80 space-y-4 hover:shadow-md transition-shadow duration-300">
+        <div
+            class="bg-white rounded-3xl p-5 shadow-sm border border-slate-100/80 border-l-4 border-l-primary-500 space-y-4 hover:shadow-md transition-shadow duration-300">
             <div class="flex justify-between items-center border-b border-slate-100 pb-2.5">
                 <h3 class="font-extrabold text-sm text-slate-800 flex items-center gap-1.5">
                     <i class="fa-solid fa-van-shuttle text-primary-500"></i> 包車出行備忘錄
                 </h3>
-                <span class="text-[10px] px-2.5 py-0.5 bg-primary-50 text-primary-700 rounded-full font-bold border border-primary-100/50">14人座或中巴</span>
+                <span
+                    class="text-[10px] px-2.5 py-0.5 bg-primary-50 text-primary-700 rounded-full font-bold border border-primary-100/50">14人座或中巴</span>
             </div>
             <div class="grid grid-cols-2 gap-3 text-xs text-slate-500">
                 <div class="bg-slate-50/70 p-3 rounded-2xl border border-slate-100/50">
-                    <p class="font-bold text-slate-800 flex items-center gap-1 mb-1"><i class="fa-solid fa-shield-halved text-[10px] text-primary-500"></i> 安全座椅規格</p>
+                    <p class="font-bold text-slate-800 flex items-center gap-1 mb-1"><i
+                            class="fa-solid fa-shield-halved text-[10px] text-primary-500"></i> 安全座椅規格</p>
                     <p class="text-slate-600 font-medium">嬰兒座 x1 · 幼童座 x2</p>
                 </div>
                 <div class="bg-slate-50/70 p-3 rounded-2xl border border-slate-100/50">
-                    <p class="font-bold text-slate-800 flex items-center gap-1 mb-1"><i class="fa-solid fa-address-book text-[10px] text-primary-500"></i> 司機聯絡管道</p>
+                    <p class="font-bold text-slate-800 flex items-center gap-1 mb-1"><i
+                            class="fa-solid fa-address-book text-[10px] text-primary-500"></i> 司機聯絡管道</p>
                     <p id="driverInfo" class="text-slate-600 font-medium">請在下方登錄</p>
                 </div>
             </div>
             <!-- Editable quick note for driver -->
             <div class="flex gap-2">
                 <input type="text" id="driverInput" placeholder="輸入司機名稱與電話..."
-                    class="flex-1 text-xs border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500">
+                    class="flex-1 text-xs bg-slate-50 border border-slate-200 focus:bg-white rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all">
                 <button onclick="saveDriverInfo()"
-                    class="bg-primary-600 hover:bg-primary-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition duration-200 cursor-pointer shadow-sm shadow-primary-500/10">儲存</button>
+                    class="bg-gradient-to-r from-primary-600 to-indigo-600 hover:from-primary-700 hover:to-indigo-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition duration-200 cursor-pointer shadow-sm shadow-primary-500/20 active:scale-[0.98]">儲存</button>
             </div>
         </div>
     </div>
 
     <!-- FLOATING BOTTOM NAVIGATION BAR -->
     <nav
-        class="fixed bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md border border-slate-200/50 z-40 rounded-2xl shadow-lg shadow-slate-200/40 max-w-md mx-auto">
-        <div class="grid grid-cols-4 py-2 text-center text-[10px]">
-            <button onclick="switchTab('itinerary')" class="flex flex-col items-center gap-1 text-primary-600 font-extrabold cursor-pointer transition-all duration-300"
+        class="fixed bottom-4 left-4 right-4 bg-white/80 backdrop-blur-lg border border-slate-200/30 z-40 rounded-3xl shadow-xl shadow-slate-300/30 max-w-md mx-auto px-2 py-1.5">
+        <div class="grid grid-cols-4 text-center">
+            <button onclick="switchTab('itinerary')"
+                class="flex flex-col items-center gap-0.5 text-primary-600 font-bold cursor-pointer transition-all duration-300 scale-105 py-1.5 px-3 rounded-2xl bg-primary-50/85 border border-primary-100/60 shadow-sm shadow-primary-500/5"
                 id="nav-itinerary">
                 <i class="fa-solid fa-route text-base"></i>
-                <span>每日行程</span>
+                <span class="text-[10px]">每日行程</span>
             </button>
             <button onclick="switchTab('hotels')"
-                class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary-500 transition-all duration-300 cursor-pointer"
+                class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-slate-600 hover:bg-slate-50/60 transition-all duration-300 cursor-pointer py-1.5 px-3 rounded-2xl border border-transparent"
                 id="nav-hotels">
                 <i class="fa-solid fa-hotel text-base"></i>
-                <span>住宿推薦</span>
+                <span class="text-[10px]">住宿推薦</span>
             </button>
             <button onclick="switchTab('dining')"
-                class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary-500 transition-all duration-300 cursor-pointer"
+                class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-slate-600 hover:bg-slate-50/60 transition-all duration-300 cursor-pointer py-1.5 px-3 rounded-2xl border border-transparent"
                 id="nav-dining">
                 <i class="fa-solid fa-utensils text-base"></i>
-                <span>在地美食</span>
+                <span class="text-[10px]">在地美食</span>
             </button>
             <button onclick="switchTab('tips')"
-                class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary-500 transition-all duration-300 cursor-pointer" id="nav-tips">
+                class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-slate-600 hover:bg-slate-50/60 transition-all duration-300 cursor-pointer py-1.5 px-3 rounded-2xl border border-transparent"
+                id="nav-tips">
                 <i class="fa-solid fa-shield-cat text-base"></i>
-                <span>行前防護</span>
+                <span class="text-[10px]">行前防護</span>
             </button>
         </div>
     </nav>
@@ -264,7 +282,8 @@
         <div
             class="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl shadow-xl overflow-hidden transform translate-y-full sm:translate-y-4 sm:scale-95 transition-all duration-300 flex flex-col max-h-[85vh]">
             <!-- Modal Header -->
-            <div class="px-5 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/80 backdrop-blur">
+            <div
+                class="px-5 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/80 backdrop-blur">
                 <div>
                     <h3 class="font-black text-slate-800 text-sm flex items-center gap-1.5">
                         <i class="fa-solid fa-arrows-rotate text-primary-600"></i> 替換備用景點
@@ -294,32 +313,104 @@
                 hotel: "熊本市區優質飯店（首晚下榻）",
                 spots: [
                     {
-                        name: "熊本城 & 櫻之馬場 城彩苑",
-                        time: "14:00 - 17:30",
+                        name: "抵達熊本機場並出關",
+                        time: "12:00～12:30",
+                        type: "交通",
                         splitImages: [
                             { url: "https://www.bring-you.info/imgs/2018/09/Kumamoto-Castle-2024-10.jpg?auto=format&fit=crop&w=400&q=80", label: "左：熊本城", author: "663highland" },
                             { url: "https://i0.wp.com/boo2k.com/wp-content/uploads/2023/08/IMG_6969.jpg?auto=format&fit=crop&w=400&q=80", label: "右：城彩苑", author: "663highland" }
                         ],
                         imageDesc: "左：熊本城 / 右：城彩苑散策街道",
-                        desc: "修復後的熊本城規劃了極為完善的無障礙步道與電梯設施，推嬰兒車或長輩散步完全無負擔。下方的城彩苑則充滿江戶風情，是品嚐熊本特色點心（如陣太鼓、馬肉可樂餅、牛奶霜淇淋）的最佳慢活起點。",
+                        desc: `班機約10:35 & 10:45抵達熊本機場 
+ 出關領行李抓約1小時～1.5小時(12:00~12:30完成出關，有人分享熊本出關人比較少半小時就拿到行李了) 
+搭乘利木津巴士前往熊本市區(約 60 分鐘車程)→入住飯店稍作休息(預計15:00辦理入住)`,
+                        gmap: "",
+                        hours: "利木津巴士班次依航班抵達時間發車",
+                        pricing: {
+                            adult: "利木津巴士約 1,000 日圓",
+                            child: "500 日圓 (6-11歲) / 幼兒免費",
+                            senior: "同成人價",
+                            note: "持交通IC卡或現金於出關後乘車處購買。"
+                        },
+                        calcEstimate: 9000,
+                        kidsTip: "👶 機場與巴士站均設有親子無障礙廁所與行李置物艙，利木津大巴可協助收折推車。",
+                        seniorTip: "👵 乘車點緊鄰出境大廳，沿路均有遮雨棚，免受風吹雨淋，非常平坦好走。"
+                    },
+                    {
+                        name: "熊本城 & 櫻之馬場 城彩苑",
+                        time: "14:00 - 17:30",
+                        type: "景點",
+                        splitImages: [
+                            { url: "https://www.bring-you.info/imgs/2018/09/Kumamoto-Castle-2024-10.jpg?auto=format&fit=crop&w=400&q=80", label: "左：熊本城", author: "663highland" },
+                            { url: "https://i0.wp.com/boo2k.com/wp-content/uploads/2023/08/IMG_6969.jpg?auto=format&fit=crop&w=400&q=80", label: "右：城彩苑", author: "663highland" }
+                        ],
+                        imageDesc: "左：熊本城 / 右：城彩苑散策街道",
+                        desc: `從櫻之小路走到熊本城大概要20分鐘平面 
+ 熊本城本身大約1小時內逛完 
+修復後的熊本城規劃了極為完善的無障礙步道與電梯設施，推嬰兒車或長輩散步完全無負擔。下方的城彩苑則充滿江戶風情，是品嚐熊本特色點心（如陣太鼓、馬肉可樂餅、牛奶霜淇淋）的最佳慢活起點。`,
+                        transform: "包車前往（或自博多搭乘新幹線至熊本站，轉乘路面電車至「熊本城・市役所前」）",
                         gmap: "https://www.google.com/maps/search/?api=1&query=熊本城",
                         hours: "09:00 - 17:00 (天守閣最晚入場16:30)",
                         pricing: {
-                            adult: "800 日圓 (高校生以上)",
+                            adult: "熊本城 800 日圓 , 熊本城+湧湧座 850日圓, 熊本城+湧湧座+熊本博物館 1100日圓",
                             child: "300 日圓 (小學・中學生)",
                             senior: "800 日圓 (長輩一般票價)",
-                            note: "學齡前兒童 (2歲/5歲孩子們) 免費！"
+                            note: "學齡前兒童免費！"
                         },
-                        calcEstimate: 6400, // 8大 * 800 (長輩非熊本市民一般無折扣) + 3小免費
+                        calcEstimate: 6400,
                         kidsTip: "👶 備有哺乳室與寬敞洗手間，城彩苑平坦好推車。",
-                        seniorTip: "👵 長輩友善，無障礙坡道一路延伸至天守閣前。"
+                        seniorTip: "👵 長輩友善，無障礙坡道一路延伸至天守閣前。",
+                        backupSpots: [
+                            {
+                                name: "水前寺成趣園",
+                                type: "景點",
+                                time: "14:00 - 17:00",
+                                image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "幽靜的桃山式迴遊庭園水前寺成趣園",
+                                desc: "水前寺成趣園是一座美麗的桃山式迴遊庭園。園內以阿蘇伏流水湧出成池，並模仿東海道五十三次風景（如迷你富士山），環境清幽。非常適合長輩散步，茶屋還可以品嚐日式抹茶與和菓子。",
+                                transform: "搭乘路面電車至「水前寺公園」站下車，步行約3分鐘",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=水前寺成趣園",
+                                hours: "08:30 - 17:00",
+                                pricing: {
+                                    adult: "400 日圓",
+                                    child: "200 日圓",
+                                    senior: "同成人價",
+                                    note: "學齡前兒童免費！"
+                                },
+                                calcEstimate: 3200,
+                                kidsTip: "👶 庭園有碎石子路，推車稍有顛簸，但餵魚活動孩子會很愛。",
+                                seniorTip: "👵 長輩極佳去處，平坦秀麗，可在古樸茶屋賞景喝茶。"
+                            },
+                            {
+                                name: "熊本熊廣場 (Kumamon Square)",
+                                type: "景點",
+                                time: "14:00 - 17:00",
+                                image: "https://place.matcha-jp.com/resize/1280x2000/2023/07/21-12-33-57-1010fb268a7776f375fc5b9ea3c67dc8ce3f.webp?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "熊本熊營業部長辦公室與表演",
+                                desc: "熊本最火紅的吉祥物「熊本熊」營業部長的辦公室！可以參觀部長辦公室、購買限定周邊，若安排好時間還能親眼見到熊本熊部長本尊的熱情舞蹈表演，絕對逗得全家哈哈大笑。",
+                                transform: "搭乘路面電車至「水道町」或「通町筋」站下車，步行約1-2分鐘",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=熊本熊廣場",
+                                hours: "10:00 - 19:00 (部長表演時間請查官網)",
+                                pricing: {
+                                    adult: "免費入場",
+                                    child: "免費入場",
+                                    senior: "免費入場",
+                                    note: "見面會名額有限，需提前排隊入場。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 看到巨大的熊本熊唱跳，小朋友會非常興奮！室內冷氣充足。",
+                                seniorTip: "👵 全程室內有座椅，不用走路，適合與孫子一起同樂。"
+                            }
+                        ]
                     },
                     {
                         name: "晚餐：勝烈亭豬排 (辛島本店)",
                         time: "18:00",
+                        type: "吃喝",
                         image: "https://img.bigfang.tw/2025/03/1743334246-4efdd2f969559e8b1c92e99f32ded48e.jpg?auto=format&fit=crop&w=400&q=80",
                         imageDesc: "在地超人氣炸腰內豬排套餐",
                         desc: "勝烈亭的炸豬排肉質細緻香甜，入口即化，非常方便長輩與幼兒咀嚼，且備有兒童餐椅與兒童餐具。辛島本店寬敞，是家庭聚餐的好去處。",
+                        transform: "搭乘路面電車至「辛島町」站下車，步行約2分鐘",
                         gmap: "https://www.google.com/maps/search/?api=1&query=勝烈亭+辛島本店",
                         hours: "11:00 - 21:30 (最後點餐21:00)",
                         pricing: {
@@ -330,7 +421,49 @@
                         },
                         calcEstimate: 0,
                         kidsTip: "👶 有提供美味的兒童餐與專屬餐具，幼童最愛。",
-                        seniorTip: "👵 特級腰內豬排極其軟嫩，牙口不好的長輩也讚不絕口。"
+                        seniorTip: "👵 特級腰內豬排極其軟嫩，牙口不好的長輩也讚不絕口。",
+                        backupSpots: [
+                            {
+                                name: "晚餐：黑亭拉麵 (下通店)",
+                                type: "吃喝",
+                                time: "18:00",
+                                image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "焦香蒜泥豚骨拉麵",
+                                desc: "創立於昭和32年的熊本拉麵老店。以自製的濃郁豚骨湯頭，加上焦香蒜泥與自製中粗麵，口味獨特香醇，是熊本拉麵的代表性經典。",
+                                transform: "搭乘路面電車至「辛島町」或「通町筋」站，步行約 3-5 分鐘",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=黑亭拉麵+下通店",
+                                hours: "10:30 - 22:00",
+                                pricing: {
+                                    adult: "約 900 ~ 1,500 日圓",
+                                    child: "兒童拉麵約 500 日圓",
+                                    senior: "同成人價",
+                                    note: "拉麵消費，無門票限制。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 有兒童座椅，可點選調味較淡的拉麵或叉燒飯，桌上備有餐具。",
+                                seniorTip: "👵 湯頭濃郁，若長輩口味偏淡可請店家調淡（薄味 Usukuchi）。"
+                            },
+                            {
+                                name: "晚餐：菅乃屋馬肉料理 (櫻町店)",
+                                type: "吃喝",
+                                time: "18:00",
+                                image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "熊本鄉土料理：馬肉刺身與馬肉燒肉",
+                                desc: "熊本最有名的鄉土料理「馬肉刺身（馬刺し）」名店。馬肉低脂高蛋白，口感鮮甜嫩滑。櫻町店裝潢精緻現代，適合家族聚餐體驗特殊料理。",
+                                transform: "位於櫻町購物中心內，搭乘路面電車至「辛島町」站下車步行約2分鐘",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=菅乃屋+櫻町店",
+                                hours: "11:00 - 22:00",
+                                pricing: {
+                                    adult: "套餐約 4,000 ~ 8,000 日圓",
+                                    child: "提供熟食及熟馬肉蓋飯",
+                                    senior: "同成人價",
+                                    note: "預約制，建議提前預訂大桌。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 備有熟食兒童蓋飯，幼童不建議食用生馬肉，可吃烤馬肉 or 熟物。",
+                                seniorTip: "👵 馬肉健康無負擔，肉質富含鐵質與營養，對長輩身體很好。"
+                            }
+                        ]
                     }
                 ]
             },
@@ -345,10 +478,12 @@
                     {
                         name: "草千里 & 阿蘇火山",
                         time: "10:00 - 12:30",
+                        type: "景點",
                         image: "https://res.klook.com/images/w_1200,h_630,c_fill,q_65/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/qulwwxcuyf71hpr53sy0/%E7%86%8A%E6%9C%AC%E9%98%BF%E8%98%87%E4%B8%AD%E5%B6%BD%E7%81%AB%E5%B1%B1%E5%8F%A3%E5%8F%8A%E8%8D%89%E5%8D%83%E9%87%8C%E4%B8%80%E6%97%A5%E7%A7%81%E4%BA%BA%E6%97%85%E9%81%8A%E5%9C%98.jpg?auto=format&fit=crop&w=600&q=80",
                         imageDesc: "草千里之濱眺望活火山噴煙",
                         author: "STA3816",
-                        desc: "草千里之濱是一片無邊無際的綠色草原，點綴著放牧牛馬與雨水池。火山空氣清新，寬闊的草地極適合 5 歲小寶貝奔跑嬉戲，更可自費體驗由專人牽行的短程騎馬，長輩與孩子都能放心安全遊玩。",
+                        desc: "草千里之濱是一片無邊無際的綠色草原，點綴著放牧牛馬與雨水池. 火山空氣清新，寬闊 of 草地極適合 5 歲小寶貝奔跑嬉戲，更可自費體驗由專人牽行的短程騎馬，長輩與孩子都能放心安全遊玩。",
+                        transform: "包車直達（山路行駛，從熊本市區出發約70-80分鐘車程）",
                         gmap: "https://www.google.com/maps/search/?api=1&query=阿蘇草千里",
                         hours: "24小時開放 (騎馬：09:00 - 16:00)",
                         pricing: {
@@ -357,17 +492,61 @@
                             senior: "同成人價",
                             note: "騎馬A方案(約5分鐘)適合親子(大人+幼童)共乘。"
                         },
-                        calcEstimate: 0, // 免入園門票
+                        calcEstimate: 0,
                         kidsTip: "👶 可在大草原奔跑放電，或體驗專人牽引的親子騎馬。",
-                        seniorTip: "👵 景觀餐廳備有座位，可在此一邊喝著名的阿蘇牛奶一邊看火山，不用走太多路。"
+                        seniorTip: "👵 景觀餐廳備有座位，可在此一邊喝著名的阿蘇牛奶一邊看火山，不用走太多路。",
+                        backupSpots: [
+                            {
+                                name: "阿蘇卡德利動物樂園 (Cuddly Dome)",
+                                type: "景點",
+                                time: "10:00 - 12:30",
+                                image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "與可愛黑熊及各種動物互動",
+                                desc: "非常受家族歡迎的動物互動樂園！這裡有知名的「猩猩小龐與詹姆士」的黑猩猩劇場，還能親手餵食小熊、水豚、小狗等，是小小孩與長輩的動物天堂。",
+                                transform: "包車前往（自阿蘇車站開車約5分鐘，或搭乘計程車）",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=阿蘇卡德利動物樂園",
+                                hours: "09:30 - 17:00",
+                                pricing: {
+                                    adult: "2,400 日圓",
+                                    child: "中小學生 1,300 日圓 / 3歲以上幼兒 900 日圓",
+                                    senior: "同成人價 2,400 日圓",
+                                    note: "門票試算：8大*2400 + 2位5歲*900 + 1位1歲半(免費) = 21,000 日圓。"
+                                },
+                                calcEstimate: 21000,
+                                kidsTip: "👶 互動區非常溫和，可以親手餵羊駝，推車租借方便。",
+                                seniorTip: "👵 有定時室內動物秀，長輩可以坐著舒適觀看，不用走太多路。"
+                            },
+                            {
+                                name: "大觀峰展望台",
+                                type: "景點",
+                                time: "10:00 - 12:30",
+                                image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "俯瞰阿蘇五岳與巨大火山口盆地",
+                                desc: "阿蘇外輪山最高峰，擁有 360 度無死角的大全景。在此可以鳥瞰整個阿蘇谷地、阿蘇五岳（宛如涅槃佛像）與九重連山，壯麗無邊的景象讓人心曠神怡。",
+                                transform: "包車前往（無直達大眾運輸，自阿蘇站開車約20-25分鐘）",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=大觀峰",
+                                hours: "24小時開放",
+                                pricing: {
+                                    adult: "免費開放 (免停車費)",
+                                    child: "免費",
+                                    senior: "免費",
+                                    note: "山上風大，建議準備薄外套防風。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 步道平坦但有坡度，需牽好幼童。草地上拍照極美。",
+                                seniorTip: "👵 停車場旁即有平坦觀景區，長輩可免走長步道，直接在商店旁觀賞壯麗景觀。"
+                            }
+                        ]
                     },
                     {
                         name: "中餐：品嚐阿蘇經典「赤牛丼」",
                         time: "12:30 - 13:30",
+                        type: "吃喝",
                         image: "https://qqblog.tw/wp-content/uploads/2024/06/YAMAYAS001.jpg?auto=format&fit=crop&w=600&q=80",
                         imageDesc: "鮮美多汁、低脂優質的赤牛蓋飯",
                         author: "Charles Deluvio",
                         desc: "享用阿蘇火山地區特有的放牧赤牛，低脂肪、肉質軟嫩，製成蓋飯鮮甜不油膩，是一定要帶長輩跟大人口嚐的當地逸品。",
+                        transform: "包車前往（阿蘇山區開車約10-15分鐘）",
                         gmap: "https://www.google.com/maps/search/?api=1&query=阿蘇あか牛丼",
                         hours: "11:00 - 15:30 (各名店營業時間有異)",
                         pricing: {
@@ -378,15 +557,38 @@
                         },
                         calcEstimate: 0,
                         kidsTip: "👶 備有全熟熟牛肉片或白飯配汁，小小孩吃得很香。",
-                        seniorTip: "👵 赤牛脂肪含量低、富含健康紅肉，對長輩健康無負擔。"
+                        seniorTip: "👵 赤牛脂肪含量低、富含健康紅肉，對長輩健康無負擔。",
+                        backupSpots: [
+                            {
+                                name: "中餐：高森田樂之里 (圍爐裏炭烤)",
+                                type: "吃喝",
+                                time: "12:30 - 13:30",
+                                image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "傳統日式圍爐裏炭火燒烤",
+                                desc: "擁有 200 年歷史的古民家餐廳。圍著日式傳統炭火爐（圍爐裏），享用炭烤阿蘇名產紅鱒魚、赤牛串、味噌田樂豆腐及烤年糕，極具日式鄉土氛圍。",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=高森田樂之里",
+                                hours: "11:00 - 18:00 (週三公休)",
+                                pricing: {
+                                    adult: "田樂套餐約 2,500 ~ 3,500 日圓",
+                                    child: "可單點烤年糕、烏龍麵",
+                                    senior: "同成人價",
+                                    note: "炭火爐旁溫度較高，帶小孩需特別注意安全。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 需特別提防小朋友伸手摸炭火，可安排坐離炭爐稍遠的榻榻米席。",
+                                seniorTip: "👵 坐在日式古民家裡，一邊喝著熱湯一邊品嚐懷舊炭烤，非常有氣氛。"
+                            }
+                        ]
                     },
                     {
                         name: "由布院散策 & 金鱗湖晨暮美景",
                         time: "15:00 - 17:30",
+                        type: "景點",
                         image: "https://img.activityjapan.com/wi/yufuin-tourist-spot3.jpg",
                         imageDesc: "晨霧縹緲的金鱗湖與湯之坪溫泉街道",
                         author: "663highland",
                         desc: "替代原先需返回熊本折返路程。阿蘇吃完午餐後開車 1.5 小時（小孩完美午睡），直達由布院。此時黃昏人潮開始退去，散步在如詩如畫的金鱗湖畔，享受清幽涼爽的山間空氣。晚上入住溫泉飯店享受日本頂級一泊二食。",
+                        transform: "包車直達由布院（自阿蘇山區經九重連山開車約1.5小時車程）",
                         gmap: "https://www.google.com/maps/search/?api=1&query=金鱗湖",
                         hours: "24小時開放 (各街道商店約09:00-17:00)",
                         pricing: {
@@ -395,9 +597,31 @@
                             senior: "免費散步",
                             note: "自然景區完全免費，晚上請在旅館內盡情享受極致溫泉泡湯。"
                         },
-                        calcEstimate: 0, // 戶外免費
+                        calcEstimate: 0,
                         kidsTip: "👶 金鱗湖與街道平坦好推車，湯之坪有吉卜力與史努比主題店，十分吸引小孩！",
-                        seniorTip: "👵 漫步木溪古道、晚上在旅館內免出門享用頂級和牛與溫泉，對長輩是絕佳享受。"
+                        seniorTip: "👵 漫步木溪古道、晚上在旅館內免出門享用頂級和牛與溫泉，對長輩是絕佳享受。",
+                        backupSpots: [
+                            {
+                                name: "九重夢大吊橋",
+                                type: "景點",
+                                time: "15:30 - 17:00",
+                                image: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "日本第一高的步行者專用大吊橋",
+                                desc: "海拔 777 米、高 173 米的日本第一高步行專用大吊橋。漫步於橋上，可 360 度觀賞九重連山，以及入選「日本瀑布百選」的震動之瀑（優美絕倫）。",
+                                transform: "包車前往（自阿蘇前往由布院途中，開車約50分鐘）",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=九重夢大吊橋",
+                                hours: "08:30 - 17:00",
+                                pricing: {
+                                    adult: "500 日圓",
+                                    child: "小學生 200 日圓 / 幼兒免費",
+                                    senior: "同成人價 500 日圓",
+                                    note: "8大3小（幼兒皆免費）試算門票：8大*500 = 4,000 日圓。"
+                                },
+                                calcEstimate: 4000,
+                                kidsTip: "👶 橋面寬敞安全，兩側護網極高，但風大且部分橋面可透視下方，膽小幼兒需抱行。",
+                                seniorTip: "👵 長輩若無懼高症，漫步在平坦的橋面賞景極佳；若懼高，可在橋頭觀景台喝咖啡休息。"
+                            }
+                        ]
                     }
                 ]
             },
@@ -411,29 +635,78 @@
                     {
                         name: "九州自然動物園 (African Safari)",
                         time: "09:30 - 13:00",
+                        type: "景點",
+                        transform: "包車前往（從由布院開車約35分鐘，園內可乘包車直接繞行或預約叢林巴士）",
                         image: "https://image.kkday.com/v2/image/get/s1.kkday.com/product_530454/20251208225412_uDWAY/png?auto=format&fit=crop&w=600&q=80",
                         imageDesc: "叢林巴士餵食野生肉食動物",
                         author: "Glen Carrie",
-                        desc: "11人家族最震撼的重頭戲！搭乘特製「叢林巴士」，用長鐵夾直接將肉片或水果送到獅子、熊和大象的嘴裡。這種不可思議的近距離體驗，保證無論是 2 歲或長輩都會興奮得尖叫不斷。",
+                        desc: `叢林巴士首班9:15 , 末班 15:50, 約50分鐘, 平日約15班, 只能預約下午班次, 其他先到先得 
+ 包車可以在園內一直繞 
+ 園內有餐廳`,
                         gmap: "https://www.google.com/maps/search/?api=1&query=九州自然動物園",
                         hours: "09:00 - 16:30 (最後野生動物入園16:00)",
                         pricing: {
                             adult: "入園費 2,600 日圓 + 叢林巴士 1,500 日圓",
-                            child: "4歲以上入園 1,500 日圓 + 巴士 1,500 日圓",
+                            child: "4歲以上入園 1,500 日圓 + 叢林巴士 1,500 日圓",
                             senior: "同成人價 (2,600 + 1,500)",
                             note: "不到2歲幼童若在大人膝上不佔位免巴士票；5歲2位需購小童套票。"
                         },
-                        calcEstimate: 38800, // (8 * 4100) + (2 * 3000) = 38800 (1yo free)
+                        calcEstimate: 38800,
                         kidsTip: "👶 2歲與5歲可坐內側由爸媽抱著一起餵食。叢林巴士強烈建議提前預約！",
-                        seniorTip: "👵 全程坐在堅固安全的車上，免去大步行走的勞累，非常適合長輩。"
+                        seniorTip: "👵 全程坐在堅固安全的車上，免去大步行走的勞累，非常適合長輩。",
+                        backupSpots: [
+                            {
+                                name: "城島高原遊樂園 (Kijima Kogen Park)",
+                                type: "景點",
+                                time: "09:30 - 13:00",
+                                image: "https://images.unsplash.com/photo-1513885045260-6b3086b24c17?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "城島高原豐富好玩的親子遊樂設施",
+                                desc: "位於由布岳山麓的高原遊樂園。擁有著名的木製雲霄飛車「朱庇特」，但也設有大量的「Toy Kingdom」室內玩具王國、旋轉木馬 and 適合 5 歲小孩的溫和設施，是完美的親子戶外景點。",
+                                transform: "包車前往（自由布院開車約15-20分鐘，或搭乘湯布院往別府之巴士）",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=城島高原遊樂園",
+                                hours: "10:00 - 17:00",
+                                pricing: {
+                                    adult: "入園料 1,500 日圓 (遊樂設施另計)",
+                                    child: "3歲以上入園料 600 日圓",
+                                    senior: "65歲以上長者 600 日圓 (需證件)",
+                                    note: "8大3小（含2長者，1位1歲半免票）試算：6大*1500 + 2長者*600 + 2小*600 = 11,400 日圓。"
+                                },
+                                calcEstimate: 11400,
+                                kidsTip: "👶 「玩具王國」室內館有成千上萬的莉卡娃娃、積木和森林家族，幼童可玩數小時！",
+                                seniorTip: "👵 園區內有許多大樹陰涼處與長椅，高山空氣清涼，陪同入園散步很愜意。"
+                            },
+                            {
+                                name: "別府鶴見岳索道 (Beppu Ropeway)",
+                                type: "景點",
+                                time: "09:30 - 11:30",
+                                transform: "包車前往（自由布院開車約20分鐘，或自別府站搭乘巴士至「別府索道」）",
+                                image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "搭乘大型纜車直達鶴見岳山頂",
+                                desc: "搭乘西日本最大級的 101 人座纜車，僅需 10 分鐘即可登上標高 1375 米的鶴見岳山頂。山頂上可飽覽別府灣、別府市區以及阿蘇山群的宏偉景色，四季皆有不同美景（春櫻、夏綠、秋楓、冬霧淞）。",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=別府鶴見岳索道",
+                                hours: "09:00 - 17:00",
+                                pricing: {
+                                    adult: "往返 1,800 日圓",
+                                    child: "4歲以上往返 900 日圓 / 4歲以下免費",
+                                    senior: "65歲以上往返 1,600 日圓 (需證件)",
+                                    note: "8大3小（2長者，1位1歲半免票）試算：6大*1800 + 2長者*1600 + 2小*900 = 15,800 日圓。"
+                                },
+                                calcEstimate: 15800,
+                                kidsTip: "👶 大纜車平穩舒適，車廂內可推推車進入，幼兒看著窗外爬升會非常新奇。",
+                                seniorTip: "👵 免去登山勞累，下了纜車即是展望台，十分平坦好走，極為推薦長輩參觀。"
+                            }
+                        ]
                     },
                     {
                         name: "別府地獄溫泉 (或是直接去福岡)",
                         time: "13:30 - 14:30",
+                        type: "景點",
+                        transform: "包車前往（從九州自然動物園出發開車約15-20分鐘）",
                         image: "https://www.viviyu.com/wp-content/uploads/2023/11/1-13.jpg",
                         imageDesc: "鈷藍色高溫如海一般的海地獄",
                         author: "Mkill",
                         desc: "動物園結束後，順路參觀僅15分鐘車程的別府最負盛名「海地獄」。庭園無障礙通道極佳，設有大型足湯，讓長輩與大人一邊泡腳，一邊享受溫泉鄉裊裊白煙的奇特風景。隨後包車直奔福岡 (約1.5小時)，小孩此時能在車上安穩午睡。",
+                        transform: "包車前往（從九州自然動物園出發開車約15-20分鐘）",
                         gmap: "https://www.google.com/maps/search/?api=1&query=別府海地獄",
                         hours: "08:00 - 17:00 (全年無休)",
                         pricing: {
@@ -442,9 +715,94 @@
                             senior: "同成人價 450 日圓",
                             note: "我們有 8 大 3 小，3位幼兒皆未上小學，免門票！"
                         },
-                        calcEstimate: 3600, // 8 * 450 = 3600
+                        calcEstimate: 3600,
                         kidsTip: "👶 湛藍水池與迷濛白煙讓孩子非常好奇，煙霧較大時請牽好幼童避免絆倒。",
-                        seniorTip: "👵 提供平坦足湯浴池，可以泡腳舒緩走了一天的腳部疲累。"
+                        seniorTip: "👵 提供平坦足湯浴池，可以泡腳舒緩走了一天的腳部疲累。",
+                        backupSpots: [
+                            {
+                                name: "別府海濱砂湯",
+                                type: "景點",
+                                time: "13:30 - 14:30",
+                                transform: "包車前往（自動物園開車約25-30分鐘，位於東別府海岸）",
+                                image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "別府灣畔獨特的天然海濱砂浴",
+                                desc: "別府最著名的天然溫泉沙浴！穿著浴衣躺在海邊，由服務人員用溫泉加熱過的黑色海沙覆蓋全身，一邊聽著海浪聲，一邊感受全身出汗的舒爽排毒體驗。",
+                                transform: "包車前往（自動物園開車約25-30分鐘，位於東別府海岸）",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=別府海濱砂湯",
+                                hours: "08:30 - 18:00 (週三公休)",
+                                pricing: {
+                                    adult: "1,500 日圓 (含浴衣租借)",
+                                    child: "同成人價 (不建議太小幼兒體驗)",
+                                    senior: "同成人價 1,500 日圓",
+                                    note: "8位大人門票試算，小孩建議不玩。"
+                                },
+                                calcEstimate: 12000,
+                                kidsTip: "👶 幼童不適合沙浴，可在防波堤旁玩沙，或在休息區由部分大人輪流照顧。",
+                                seniorTip: "👵 砂溫熱重壓對促進血液循環、舒緩關節痛極佳，長輩一定會非常喜愛。"
+                            },
+                            {
+                                name: "高崎山自然動物園 (野生猴區)",
+                                type: "景點",
+                                time: "13:30 - 14:30",
+                                transform: "包車前往（自別府市區開車約10分鐘，緊鄰大分海洋宮殿水族館）",
+                                image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "上千隻野生日本獼猴大集合",
+                                desc: "位於高崎山，這裡棲息著大約 1000 隻野生日本獼猴。遊客可以近距離觀察頑皮的小猴子嬉戲、猴王進食等有趣場景，園區內還有可愛的單軌小火車可搭乘上山。",
+                                transform: "包車前往（自別府市區開車約10分鐘，緊鄰大分海洋宮殿水族館）",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=高崎山自然動物園",
+                                hours: "09:00 - 17:00",
+                                pricing: {
+                                    adult: "520 日圓 + 單軌車 110 日圓",
+                                    child: "中小學生 260 日圓 / 幼兒免費",
+                                    senior: "同成人價 (520 + 110)",
+                                    note: "門票極便宜。8大3小（幼童免票）試算：8大*(520+110) = 5,040 日圓。"
+                                },
+                                calcEstimate: 5040,
+                                kidsTip: "👶 搭乘黃色的「猴子單軌車」上山，小朋友很愛！園內嚴禁攜帶食物或挑釁猴子。",
+                                seniorTip: "👵 用單軌小火車直達山頂猴群區，長輩免爬陡坡，非常省力好玩。"
+                            }
+                        ]
+                    },
+                    {
+                        name: "移動到福岡",
+                        time: "15:00-17:00",
+                        type: "交通",
+                        image: "https://www.viviyu.com/wp-content/uploads/2023/11/1-13.jpg",
+                        imageDesc: "專車前往福岡",
+                        author: "Mkill",
+                        desc: "從別府前往福岡，車程約1.5-2小時",
+                        gmap: "https://www.google.com/maps/search/?api=1&query=福岡",
+                        hours: "約 1.5 - 2 小時車程",
+                        pricing: {
+                            adult: "包車費用已含",
+                            child: "汽座配備已含",
+                            senior: "同成人",
+                            note: "專車一路直達福岡，中途不停靠轉乘。"
+                        },
+                        calcEstimate: 0,
+                        kidsTip: "👶 1.5小時-2小時車程，是寶寶在安全座椅上次午睡的黃金時間。",
+                        seniorTip: "👵 中途可在高速公路服務區休息，車內冷氣舒適，可閉目養神。"
+                    },
+                    {
+                        name: "福岡入住飯店晚餐",
+                        time: "19:00",
+                        type: "吃喝",
+                        transform: "位於博多車站周邊或天神商圈，自飯店步行即可抵達",
+                        image: "https://images.unsplash.com/photo-1547928576-a4a3323d8b62?auto=format&fit=crop&w=400&q=80",
+                        imageDesc: "福岡在地美味雞湯鍋或博多豚骨拉麵",
+                        desc: "在福岡飯店內或博多站周邊大樓享用晚餐。推薦博多著名的雞肉水炊鍋或拉麵，口味清淡滋補，方便長輩與幼童食用。",
+                        transform: "位於博多車站周邊或天神商圈，自飯店步行即可抵達",
+                        gmap: "https://www.google.com/maps/search/?api=1&query=博多水炊き",
+                        hours: "18:00 - 21:30 (依飯店或餐廳營業時間為準)",
+                        pricing: {
+                            adult: "約 3,000 ~ 5,000 日圓",
+                            child: "兒童共享或小點約 800 日圓",
+                            senior: "同成人價",
+                            note: "餐飲消費，已含於一泊二食或自由選用。"
+                        },
+                        calcEstimate: 0,
+                        kidsTip: "👶 溫潤的雞湯與最後煮的蛋花雜炊是幼兒最合適的副食品。",
+                        seniorTip: "👵 溫熱清淡的湯頭非常適合長輩晚間暖胃，容易消化。"
                     }
                 ]
             },
@@ -458,10 +816,12 @@
                     {
                         name: "海洋世界海之中道水族館 (全日慢活)",
                         time: "09:30 - 14:30",
+                        type: "景點",
                         image: "https://res.klook.com/images/w_1200,h_630,c_fill,q_65/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/c29p2n342ln9tlw1z2jv/%E7%A6%8F%E5%B2%A1%E6%B5%B7%E4%B8%AD%E1%81%93%E6%B5%B7%E6%B4%8B%E4%B8%96%E7%95%8C%E9%96%80%E7%A5%A8-Klook%E9%A6%99%E6%B8%AF.jpg",
                         imageDesc: "背靠大海的海洋世界海之中道主體結構",
                         author: "spaceaero2",
                         desc: "全新全日慢活調整！這座頂級水族館有超震撼的 7 米深巨型水槽、超人氣企鵝和海獺，最精采的是背靠玄界灘大海演出的海豚與海獅秀。由於安排全日，全家可以在冷氣房內悠閒漫步，完全無趕路壓力。",
+                        transform: "搭乘JR（約31分鐘）：「JR博多站」搭乘 JR鹿兒島本線 →「JR香椎站」轉乘 JR香椎線 →「JR海之道站」下車後步行約5分鐘即可抵達",
                         gmap: "https://www.google.com/maps/search/?api=1&query=マリンワールド海の中道",
                         hours: "09:30 - 17:30 (視季節可能調整)",
                         pricing: {
@@ -470,13 +830,57 @@
                             senior: "65歲以上長輩優惠 2,200 日圓 (購票需提示證件)",
                             note: "票價試算：6大*2500 + 2位65+長輩*2200 + 2位5歲幼兒*700 + 1位1歲幼兒(免費)"
                         },
-                        calcEstimate: 20800, // 15000 + 4400 + 1400 = 20800
+                        calcEstimate: 20800,
                         kidsTip: "👶 水族館對推車極為友善。觸摸池能親手觸摸海星，海豚表演更是逗得孩子開懷大笑！",
-                        seniorTip: "👵 室內全空調無障礙環境、平坦好走、有超多休息椅。海豚秀場備有專用輪椅與舒適座位席。"
+                        seniorTip: "👵 室內全空調無障礙環境、平坦好走、有超多休息椅。海豚秀場備有專用輪椅與舒適座位席。",
+                        backupSpots: [
+                            {
+                                name: "福岡塔 & 百道海濱公園",
+                                type: "景點",
+                                time: "09:30 - 13:00",
+                                transform: "搭乘巴士：於博多站前A月台搭乘西鐵巴士（306路等）至「福岡塔」下車，車程約25分鐘",
+                                image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "福岡地標福岡塔與歐風海濱沙灘",
+                                desc: "高 234 米的日本最高海濱塔。從 123 米高的展望台可以 360 度鳥瞰福岡市區與博多灣。塔下即是百道濱海濱公園，擁有美麗的歐式建築餐廳與白沙灘，極富度假氣息。",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=福岡塔",
+                                hours: "09:30 - 22:00",
+                                pricing: {
+                                    adult: "800 日圓",
+                                    child: "中小學生 500 日圓 / 4歲以上幼兒 200 日圓",
+                                    senior: "65歲以上長者 720 日圓 (需證件)",
+                                    note: "8大3小（含2長者，1yo免票）試算：6大*800 + 2長者*720 + 2小*200 = 6,640 日圓。"
+                                },
+                                calcEstimate: 6640,
+                                kidsTip: "👶 展望台有 VR 體驗與戳章收集。下方的沙灘極適合小小孩玩沙踩水。",
+                                seniorTip: "👵 電梯直達，全無障礙通道，長輩可以坐著靜靜享受高空海景。"
+                            },
+                            {
+                                name: "大濠公園 & 福岡市美術館",
+                                type: "景點",
+                                time: "09:30 - 13:00",
+                                transform: "搭乘地鐵：搭乘地鐵機場線至「大濠公園站」下車，自3號出口步行約3分鐘",
+                                image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "綠意盎然的大濠公園湖景與美術館",
+                                desc: "福岡市中心的巨大水上公園，仿造西湖設計。遊客可租借可愛的鴨子天鵝船在湖面悠遊。湖畔設有日本庭園與福岡市美術館（門外有草間彌生的南瓜），是極佳的慢活綠洲。",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=大濠公園",
+                                hours: "24小時開放 (美術館09:30-17:30)",
+                                pricing: {
+                                    adult: "免費入園 (天鵝船約 1,000 ~ 1,600 日圓/30分鐘)",
+                                    child: "免費",
+                                    senior: "免費",
+                                    note: "在湖畔的星巴克喝咖啡、看水鳥，是日式慢活的代表。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 公園內有大型兒童遊樂場「鯨魚公園」，溜滑梯與沙坑讓小孩玩得不亦樂乎。",
+                                seniorTip: "👵 環湖步道全平坦無障礙，湖風吹拂，非常適合長輩悠閒散步。"
+                            }
+                        ]
                     },
                     {
                         name: "海之中道海濱公園",
                         time: "14:30 - 17:30",
+                        type: "景點",
+                        transform: "從水族館步行約5-10分鐘即可抵達公園入口",
                         image: "https://bobowin.blog/wp-content/uploads/20200120102501_82.jpg?auto=format&fit=crop&w=600&q=80",
                         imageDesc: "海之中道廣大遊樂區與動物森林",
                         author: "Charles Deluvio",
@@ -489,9 +893,51 @@
                             senior: "65歲以上長輩 210 日圓",
                             note: "超級便宜的國營公園門票！8位大人(含長輩)試算：6大*450 + 2長者*210 = 3120 日圓。"
                         },
-                        calcEstimate: 3120, // 6*450 + 2*210 = 3120
+                        calcEstimate: 3120,
                         kidsTip: "👶 「奇蹟軟膠巨蛋」與大沙坑是放電神器，旁邊可以租借附幼兒安全座椅的協力腳踏車！",
-                        seniorTip: "👵 公園內繁花盛開（9月有美麗的大波斯菊），平坦無阻礙，包車可以直送門口，長輩漫步極度舒適。"
+                        seniorTip: "👵 公園內繁花盛開（9月有美麗的大波斯菊），平坦無阻礙，包車可以直送門口，長輩慢步極度舒適。",
+                        backupSpots: [
+                            {
+                                name: "福岡 teamLab Forest (E・ZO FUKUOKA)",
+                                type: "景點",
+                                time: "14:30 - 17:30",
+                                transform: "搭乘地鐵至「唐人町站」下車步行約15分鐘，或搭乘巴士至「福岡PayPay巨蛋」站",
+                                image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "teamLab沉浸式數位藝術森林",
+                                desc: "位於福岡巨蛋旁的 Boss E・ZO 娛樂大樓內。teamLab Forest 分為「捕獲並收集的森林」和「運動森林」。遊客可以用手機捕捉光影小動物，或在立體的光影空間內彈跳律動，是超夢幻的拍照與體驗景點。",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=teamLab+Forest+Fukuoka",
+                                hours: "11:00 - 20:00",
+                                pricing: {
+                                    adult: "2,200 日圓",
+                                    child: "中學生以下 800 日圓 / 3歲以下免費",
+                                    senior: "同成人價 2,200 日圓",
+                                    note: "8大3小（1yo免費）試算：8大*2200 + 2小*800 = 19,200 日圓。"
+                                },
+                                calcEstimate: 19200,
+                                kidsTip: "👶 絢麗的光影和互動投射讓小孩像捉迷藏一樣興奮！部分高低不平路段需小心行走。",
+                                seniorTip: "👵 室內冷氣充足。雖然有高低起伏的光影地面，但可以走平緩觀賞通道，奇幻景色十分新鮮。"
+                            },
+                            {
+                                name: "福岡巨蛋 & Boss E・ZO FUKUOKA",
+                                type: "景點",
+                                time: "14:30 - 17:30",
+                                transform: "搭乘地鐵至「唐人町站」下車步行約15-20分鐘，或自博多站搭乘直達巴士",
+                                image: "https://images.unsplash.com/photo-1513885045260-6b3086b24c17?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "福岡軟銀鷹主場巨蛋與頂級娛樂中心",
+                                desc: "造訪福岡軟銀鷹棒球隊的主場巨蛋！巨蛋旁的 Boss E_ZO 內有三麗鷗主題館（Sanrio Characters Dream Cafe）、棒球體驗館、和頂樓的絕景滑梯。周邊還有大商場 MARK IS 福岡 momochi，方便全家購物聚餐。",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=Boss+E・ZO+FUKUOKA",
+                                hours: "11:00 - 22:00",
+                                pricing: {
+                                    adult: "免費進入商場 (各體驗館門票另計)",
+                                    child: "免費",
+                                    senior: "免費",
+                                    note: "商場寬敞平坦，三麗鷗館及美食街非常適合家族在下午輕鬆度過。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 三麗鷗家族主題區有超多拍照打卡點，美食街還有兒童專屬用餐矮桌椅區。",
+                                seniorTip: "👵 巨蛋周邊有平坦的高架步道直通商場，內部有無數長椅與咖啡廳，休閒度滿分。"
+                            }
+                        ]
                     }
                 ]
             },
@@ -505,6 +951,8 @@
                     {
                         name: "福岡麵包超人兒童博物館（或是太宰府天滿宮、博多運河城）",
                         time: "10:00 - 14:00",
+                        type: "景點",
+                        transform: "搭乘地鐵：地鐵機場線「中洲川端站」下車直通博多河岸購物中心（Riverain Mall）5-6樓",
                         image: "https://d10pyp7ylo9bub.cloudfront.net/2019/07/anpannewcover2.jpg",
                         imageDesc: "博多河岸購物中心by高島屋 (麵包超人博物館所在地)",
                         author: "Jmho",
@@ -514,336 +962,118 @@
                         pricing: {
                             adult: "2,000 ~ 2,200 日圓 (平日均價為 2,000)",
                             child: "1歲以上同成人票價 (2,000 ~ 2,200 日圓)",
-                            senior: "長輩同成人票價 (2,000 日圓)",
-                            note: "不滿1歲免費；我們有8大3小(1歲半+5歲兩位都要購票，共11人)"
-                        },
-                        calcEstimate: 22000, // 11人 * 2000 = 22000
-                        kidsTip: "👶 2歲與5歲孩子的天堂！如果是9月壽星，記得在櫃檯領取精美生日卡和胸章！",
-                        seniorTip: "👵 舞台表演區有階梯座位可坐著休息。看着孫子和麵包超人唱跳，長輩的心都要融化了。"
-                    },
-                    {
-                        name: "搭乘包車前往福岡機場 → 返回溫馨的家",
-                        time: "14:30",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Fukuoka_Airport_Domestic_Terminal_202011_01.jpg/640px-Fukuoka_Airport_Domestic_Terminal_202011_01.jpg",
-                        imageDesc: "福岡機場國內線航廈/聯絡客機",
-                        author: "Melancholie",
-                        desc: "麵包超人購物中心距離福岡機場僅需約 15 分鐘包車車程，時間抓得剛剛好。上車後小孩保證直接秒睡，讓大人在機場可以輕鬆辦理登機，並在免稅店做最後的土產伴手禮採購，畫下完美句點。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=福岡空港",
-                        hours: "24小時開放 (依各航班時間為準)",
-                        pricing: {
-                            adult: "免費進入機場大廳",
-                            child: "免費進入機場大廳",
-                            senior: "免費進入機場大廳",
-                            note: "無門票限制。"
-                        },
-                        calcEstimate: 0,
-                        kidsTip: "👶 機場有親子廁所和遊樂區，上機前再換一次尿布最安穩。",
-                        seniorTip: "👵 機場有無障礙服務，包車直送出境大廳，不用拉行李走太遠。"
-                    }
-                ]
-            }
-        ];
-
-        const tourDataOption2 = [
-            {
-                day: 1,
-                date: "9/12 (五)",
-                theme: "福岡市區慢活起手",
-                sub: "不拉遠車，體力緩衝日",
-                hotel: "福岡市區優質飯店",
-                spots: [
-                    {
-                        name: "大濠公園散策 & 星巴克咖啡",
-                        time: "15:00 - 17:30",
-                        image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
-                        imageDesc: "平坦推車友善的寧靜湖畔公園",
-                        desc: "抵達福岡後前往飯店放置行李。隨後前往【大濠公園】。這裡路面極為平坦、推車友善。長輩可沿著湖畔散步，4歲小孩去遊戲區放電，大人去湖畔星巴克喝杯咖啡放鬆。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=大濠公園",
-                        hours: "24小時開放",
-                        pricing: {
-                            adult: "免費入園",
-                            child: "免費",
-                            senior: "免費",
-                            note: "園內星巴克或天鵝船租借費用自理。"
-                        },
-                        calcEstimate: 0,
-                        kidsTip: "👶 設有兒童遊樂區（鯨魚公園），沙坑與滑梯是放電聖地，路面全平坦，推車暢行無阻。",
-                        seniorTip: "👵 湖畔步道平緩，長輩可以一邊散步一邊賞景，累了在星巴克或綠蔭長椅歇息。"
-                    },
-                    {
-                        name: "晚餐：博多水炊鍋 (雞湯鍋)",
-                        time: "18:00",
-                        image: "https://images.unsplash.com/photo-1547928576-a4a3323d8b62?auto=format&fit=crop&w=600&q=80",
-                        imageDesc: "溫潤清雞湯與軟嫩雞肉的在地名物",
-                        desc: "晚餐安排著名的【博多水炊鍋（雞湯鍋）】。清雞湯與軟嫩的雞肉、蔬菜，對長輩清爽無負擔，也極度適合不到兩歲的寶寶食用。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=博多水炊き",
-                        hours: "17:00 - 22:00 (依各餐廳而定)",
-                        pricing: {
-                            adult: "套餐約 3,000 ~ 5,000 日圓",
-                            child: "提供兒童小碗，適合共享",
-                            senior: "同成人價",
-                            note: "極度熱門，建議提前預約私人包廂。"
-                        },
-                        calcEstimate: 0,
-                        kidsTip: "👶 溫潤無油的白雞湯、雞肉丸與最後熬煮的蛋花雜炊粥對1.5歲寶寶是極佳辅食。",
-                        seniorTip: "👵 清淡滋補、少油少鹽，軟嫩雞肉對長輩牙口毫無負擔，暖胃又健康。"
-                    }
-                ]
-            },
-            {
-                day: 2,
-                date: "9/13 (六)",
-                theme: "海洋與自然放電日",
-                sub: "雙景點在隔壁 · 有冷氣有戶外，大人小孩都兼顧",
-                hotel: "福岡市區優質飯店（續住）",
-                spots: [
-                    {
-                        name: "海洋世界海之中道 (水族館)",
-                        time: "10:00 - 13:15",
-                        image: "https://res.klook.com/images/w_1200,h_630,c_fill,q_65/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/c29p2n342ln9tlw1z2jv/%E7%A6%8F%E5%B2%A1%E6%B5%B7%E4%B8%AD%E1%81%93%E6%B5%B7%E6%B4%8B%E4%B8%96%E7%95%8C%E9%96%80%E7%A5%A8-Klook%E9%A6%99%E6%B8%AF.jpg",
-                        imageDesc: "玄界灘海景相伴的精采海豚表演",
-                        desc: "【海洋世界海之中道（水族館）】：全程推車無障礙。看 11:00 的海豚海獅表演（背靠博多灣海景）。中午 12:00～13:15 在館內 1 樓餐廳用餐，大片玻璃窗外就是海豚在身邊游來游去，小孩吃飯超專注。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=マリンワールド海の中道",
-                        hours: "09:30 - 17:30",
-                        pricing: {
-                            adult: "2,500 日圓",
-                            child: "中小學生 1,200 日圓 / 3歲以上 700 日圓",
-                            senior: "65歲以上長者 2,200 日圓 (需提示證件)",
-                            note: "票價試算：6大*2500 + 2位65+長輩*2200 + 2位5歲幼兒*700 + 1位1.5歲嬰幼兒(免費)"
-                        },
-                        calcEstimate: 20800,
-                        kidsTip: "👶 1樓餐廳的落地玻璃窗可以近距離看海豚游來游去，能大大提升小孩吃飯的專注度。",
-                        seniorTip: "👵 全程推車無障礙，空調環境舒適，海豚秀看台有專用電梯與長椅，體力消耗小。"
-                    },
-                    {
-                        name: "海之中道海濱公園 (看水豚)",
-                        time: "13:30 - 16:00",
-                        image: "https://bobowin.blog/wp-content/uploads/20200120102501_82.jpg?auto=format&fit=crop&w=600&q=80",
-                        imageDesc: "動物森林水豚與溫馴袋鼠互動",
-                        desc: "【海之中道海濱公園】：租借園內的「電動遊園車（園內巴士）」移動。直奔「動物森林」看療癒的水豚君與溫馴袋鼠（非常適合1.5歲和4歲），接著帶孩子去兒童廣場玩樂，長輩可在樹蔭下吹海風休息。16:00～：11人上車斷電熟睡，一路睡回博多市區。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=海の中道海浜公園",
-                        hours: "09:30 - 17:30",
-                        pricing: {
-                            adult: "450 日圓",
-                            child: "國中以下免費！(5歲及1.5歲全部免費)",
-                            senior: "65歲以上長者 210 日圓",
-                            note: "公園極大，強烈建議購買園內巴士券 (成人300日圓/小童150日圓) 輕鬆移動。"
-                        },
-                        calcEstimate: 3120,
-                        kidsTip: "👶 動物森林的水豚非常溫馴，1.5歲和4歲孩子可近距離觀察；隨後可在超大溜滑梯區盡情放電。",
-                        seniorTip: "👵 公園平坦開闊，搭乘遊園車可免去長途烈日步行，在林蔭下野餐吹海風極為愜意。"
-                    },
-                    {
-                        name: "晚餐：博多運河城 (音樂水舞秀)",
-                        time: "18:00",
-                        image: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=400&q=80",
-                        imageDesc: "人工運河貫穿的綜合購物城",
-                        desc: "在【博多運河城】用餐，順便看整點的音樂水舞秀，高聳的水柱與燈光音樂配合，孩子會非常興奮。運河城內還有眾多母嬰品牌與美食餐廳。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=博多運河城",
-                        hours: "10:00 - 21:00 (餐廳至23:00)",
-                        pricing: {
-                            adult: "免費進入 (水舞表演免費觀看)",
-                            child: "免費",
-                            senior: "免費",
-                            note: "晚餐可在運河城內或5F拉麵競技場自由享用。"
-                        },
-                        calcEstimate: 0,
-                        kidsTip: "👶 整點音樂水舞能吸引寶寶全部注意力，商場內嬰兒推車租借與哺乳室設施完善。",
-                        seniorTip: "👵 全室內無障礙坡道，長輩能免受室外風雨影響，舒適購物、散步及享用晚餐。"
-                    }
-                ]
-            },
-            {
-                day: 3,
-                date: "9/14 (日)",
-                theme: "高潮驚喜日",
-                sub: "九州自然動物園餵獅子 · 由布院晨暮散策",
-                hotel: "由布院溫泉旅館（一泊二食）",
-                spots: [
-                    {
-                        name: "九州自然動物園 (African Safari)",
-                        time: "10:30 - 13:30",
-                        image: "https://image.kkday.com/v2/image/get/s1.kkday.com/product_530454/20251208225412_uDWAY/png?auto=format&fit=crop&w=600&q=80",
-                        imageDesc: "乘坐叢林巴士長夾親自餵食野獸",
-                        desc: "09:00福岡出發，直奔別府。【九州自然動物園】：全家搭乘「叢林巴士（Jungle Bus）」，大人小孩用長夾直接餵食獅子、大象，體驗震撼。中午直接在動物園內的餐廳簡單用餐。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=九州自然動物園",
-                        hours: "09:00 - 16:30",
-                        pricing: {
-                            adult: "入園費 2,600 日圓 + 巴士 1,500 日圓",
-                            child: "4歲以上入園 1,500 日圓 + 巴士 1,500 日圓",
-                            senior: "同成人價",
-                            note: "不滿2歲幼童抱在大腿上不佔位免巴士票。8大3小試算：(8*4100) + (2*3000) = 38,800 日圓。"
-                        },
-                        calcEstimate: 38800,
-                        kidsTip: "👶 親自拿長夾把肉塊送入獅子口中，極度震撼！不到2歲的幼童建議由爸媽緊抱安全餵食。",
-                        seniorTip: "👵 全程在堅固防護的巴士內安全觀看，不需長途走動，非常適合長者。"
-                    },
-                    {
-                        name: "由布院老街散策 & 金鱗湖",
-                        time: "14:30 - 17:00",
-                        image: "https://img.activityjapan.com/wi/yufuin-tourist-spot3.jpg",
-                        imageDesc: "青山環抱下的清幽溫泉街",
-                        desc: "從動物園開車直奔【由布院】（車程約35分鐘，小孩剛好在車上小睡）。【由布院散策】：這時店家都開著，全家悠閒逛湯之坪街道、沿路吃點心（如 B-speak 蛋糕捲、可樂餅），一路漫步到【金鱗湖】欣賞湖光山色，此時正好是下午陽光最美的時刻。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=金鱗湖",
-                        hours: "24小時開放 (商鋪大多營業至17:00)",
-                        pricing: {
-                            adult: "免費散步",
-                            child: "免費",
-                            senior: "免費",
-                            note: "沿途各色著名甜點與伴手禮小吃消費自理。"
-                        },
-                        calcEstimate: 0,
-                        kidsTip: "👶 湯之坪街道設有橡子共和國與史努比主題店，十分逗趣。部分路面為石子路，推車稍震。",
-                        seniorTip: "👵 慢步木溪步道，環境極佳。累了可以在日式茶屋中喝熱茶賞景，休閒度高。"
-                    },
-                    {
-                        name: "入住溫泉旅館 & 包廂會席料理",
-                        time: "17:00",
-                        image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
-                        imageDesc: "一泊二食私人包廂日式宴席",
-                        desc: "17:00 入住由布院溫泉旅館。長輩泡湯舒緩體力。18:00 在旅館包廂或房間內享用精緻的「會席料理」一泊二食，不用擔心小孩吵到其他客人。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=由布院溫泉",
-                        hours: "依各旅館規定",
-                        pricing: {
-                            adult: "包含於房費中 (一泊二食)",
-                            child: "提供特色小童餐點或共享",
-                            senior: "同成人價",
-                            note: "獨立包廂中進食能確保隱私，完全放鬆。"
-                        },
-                        calcEstimate: 0,
-                        kidsTip: "👶 日式榻榻米房型對幼兒極其安全（不擔心滾下床）。包廂用餐讓爸媽更輕鬆安撫嫩嬰。",
-                        seniorTip: "👵 旅館內配備精良溫泉浴池，晚餐在房間或包廂免出門，長輩能獲得極佳享受。"
-                    }
-                ]
-            },
-            {
-                day: 4,
-                date: "9/15 (一)",
-                theme: "絕美溫泉景緻",
-                sub: "別府海地獄足湯體驗 · 回福岡麵包超人館",
-                hotel: "福岡市區優質飯店",
-                spots: [
-                    {
-                        name: "別府海地獄 (足湯體驗)",
-                        time: "10:40 - 12:00",
-                        image: "https://www.viviyu.com/wp-content/uploads/2023/11/1-13.jpg",
-                        imageDesc: "溫泉白煙瀰漫的湛藍地獄池",
-                        desc: "10:00溫泉旅館退房前往別府. 只挑最精華、推車最友善的【別府海地獄】。看湛藍色的煙霧溫泉，長輩可以在這裡體驗免費的溫泉足湯（記得隨身帶小毛巾擦腳）。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=別府海地獄",
-                        hours: "08:00 - 17:00",
-                        pricing: {
-                            adult: "450 日圓",
-                            child: "學齡前兒童免費！(我們有3小皆免門票)",
-                            senior: "同成人價 450 日圓",
-                            note: "8位大人門票試算：8 * 450 = 3,600 日圓。"
-                        },
-                        calcEstimate: 3600,
-                        kidsTip: "👶 水池湛藍迷人且冒著滾滾大霧，小朋友會很好奇。步道非常平坦推車輕鬆。",
-                        seniorTip: "👵 足湯池非常平緩安全，長輩泡腳能舒緩筋骨（自備擦腳小毛巾）。"
-                    },
-                    {
-                        name: "中餐：別府地獄蒸料理 (或大分特產)",
-                        time: "12:00 - 13:30",
-                        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
-                        imageDesc: "溫泉蒸汽高溫燜蒸的鮮甜食材",
-                        desc: "在別府享用當地著名的「地獄蒸」料理或大分縣美食。利用天然溫泉地熱蒸氣蒸熟，無添加油脂與過多鹽分，吃起來健康甜美。13:30～15:30 啟程回福岡，小孩剛好在包車上進行長途午睡。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=別府地獄蒸",
-                        hours: "11:00 - 14:00 (依各餐廳而定)",
-                        pricing: {
-                            adult: "單點或套餐約 1,500 ~ 2,500 日圓",
-                            child: "清蒸地瓜/蔬菜極適合寶寶食用",
-                            senior: "同成人價",
-                            note: "蒸氣溫度極高，點餐與拿取食物時請注意與小小孩保持安全距離。"
-                        },
-                        calcEstimate: 0,
-                        kidsTip: "👶 蒸熟的地瓜、胡蘿蔔等富含自然甜味，無油無化學調味，是極棒的寶寶副食品。",
-                        seniorTip: "👵 清蒸極致養生、低油低鹽，能品嚐大分在地食材最真實甘甜，長輩極愛。"
-                    },
-                    {
-                        name: "福岡麵包超人兒童博物館",
-                        time: "15:30 - 18:00",
-                        image: "https://d10pyp7ylo9bub.cloudfront.net/2019/07/anpannewcover2.jpg",
-                        imageDesc: "福岡河岸購物中心內的兒童室內樂園",
-                        desc: "【福岡麵包超人兒童博物館】：全室內冷氣開放，專為學齡前（1~5歲）兒童設計。這時部分大人可陪小孩，想採買的隊友可以輪流到隔壁的天神/博多地下街、藥妝店進行伴手禮大採買。晚餐：天神或博多市區餐廳。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=福岡麵包超人博物館",
-                        hours: "10:00 - 17:00",
-                        pricing: {
-                            adult: "2,000 日圓 (平日均價)",
-                            child: "1歲以上同成人票價 (2,000 日圓)",
-                            senior: "同成人票價 (2,000 日圓)",
+                            senior: "同成人票價 (2,000 ~ 2,200 日圓)",
                             note: "我們8大3小，其中1.5歲與4歲小童皆需購票，共11人購票。"
                         },
                         calcEstimate: 22000,
                         kidsTip: "👶 專屬滑梯、角色見面會、彩球室內池，1.5歲與4歲孩子在此能徹底瘋玩放電！",
-                        seniorTip: "👵 室內冷氣開放有眾多靠背座位與咖啡廳，長輩坐著看孫子拍照，心都融化了。"
-                    }
-                ]
-            },
-            {
-                day: 5,
-                date: "9/16 (二)",
-                theme: "文化祈福與最後衝刺",
-                sub: "櫛田神社巨大山笠 · LaLaport機場前最後補貨",
-                hotel: "溫馨的家",
-                spots: [
-                    {
-                        name: "博多總鎮守 櫛田神社",
-                        time: "09:30 - 11:30",
-                        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80",
-                        imageDesc: "博多歷史中心常設大型飾山笠",
-                        desc: "上午【櫛田神社】：博多的信仰中心，參觀巨大的「飾山笠」，帶長輩來參拜祈福、抽籤。院內樹齡千年的銀杏古木非常壯觀，清幽寧靜。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=櫛田神社",
-                        hours: "04:00 - 22:00",
-                        pricing: {
-                            adult: "免費參拜",
-                            child: "免費",
-                            senior: "免費",
-                            note: "有些許石子路，推車可經由無障礙坡道平坦繞行。"
-                        },
-                        calcEstimate: 0,
-                        kidsTip: "👶 門口擺放的大山笠高聳色彩斑斕，院內池塘有許多水鳥跟鴿子，小孩會感到驚喜。",
-                        seniorTip: "👵 博多當地最著名的求壽祈福神社，漫步參觀參拜非常適合長輩，路程極短。"
+                        seniorTip: "👵 室內冷氣開放有眾多靠背座位與咖啡廳，長輩坐著看孫子拍照，心都融化了。",
+                        backupSpots: [
+                            {
+                                name: "太宰府天滿宮",
+                                type: "景點",
+                                time: "10:00 - 13:00",
+                                transform: "搭乘西鐵電車：自西鐵「福岡天神站」搭乘天神大牟田線至「二日市站」，轉乘太宰府線至「太宰府站」下車",
+                                image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "太宰府天滿宮御本殿與表參道星巴克",
+                                desc: "祭祀學問之神菅原道真的全國天滿宮總本社。表參道非常熱鬧，可以品嚐現烤的特產梅枝餅（梅ヶ枝餅），並參觀由大師隈研吾設計的木造星巴克。庭園古木參天，太鼓橋與菖蒲池景色優美。",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=太宰府天滿宮",
+                                hours: "06:30 - 19:00",
+                                pricing: {
+                                    adult: "免費參拜 (免門票)",
+                                    child: "免費",
+                                    senior: "免費",
+                                    note: "表參道步行街鋪設平整，但有部分碎石子神社區，推車可避開碎石繞行。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 神社前的「御神牛」銅像，傳說摸牛頭能變聰明，小朋友會很喜歡去排隊摸摸牛角。",
+                                seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在星巴克或日式茶屋坐下休息，極具文化氛圍。"
+                            },
+                            {
+                                name: "博多運河城 (Canal City Hakata)",
+                                type: "景點",
+                                time: "10:00 - 13:30",
+                                transform: "搭乘地鐵七隈線至「櫛田神社前站」下車，步行約3分鐘即可抵達",
+                                image: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "大型水舞表演與博多拉麵競技場",
+                                desc: "福岡市區最經典的半開放式巨型購物中心。一條人工運河貫忘其中，每半點會上演震撼的音樂噴泉水舞。5樓還有「拉麵競技場」，集合了全日本 8 家頂尖拉麵店，是吃拉麵 and 購物的聖地。",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=博多運河城",
+                                hours: "10:00 - 21:00 (餐廳至23:00)",
+                                pricing: {
+                                    adult: "免費進入 (水舞秀免費觀賞)",
+                                    child: "免費",
+                                    senior: "免費",
+                                    note: "備有迪士尼、吉卜力橡子共和國及三麗鷗專賣店，大人小孩均能買個痛快。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 3D水舞噴泉極為壯觀，還常有動漫（如海賊王、鋼彈）主題水幕秀，小孩會看得目不轉睛。",
+                                seniorTip: "👵 全程室內商場，配備無障礙電梯與無障礙洗手間，下雨天也完全不受影響。"
+                            },
+                            {
+                                name: "LaLaport 福岡 (1:1 鋼彈)",
+                                type: "景點",
+                                time: "10:00 - 13:30",
+                                transform: "搭乘JR至「竹下站」下車步行約9分鐘；或自博多站4號乘車處搭乘直達巴士約20分鐘",
+                                image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "1:1 RG實物大 ν 鋼彈立像",
+                                desc: "全新福岡購物地標！最矚目的是門口高達 24.8 米的 1:1 實物大 ν 鋼彈立像，定時還會有擺頭跟亮燈的動態演出。商場內有巨大的玩具反斗城、KidZania 兒童職業體驗館，以及極大的優雅美食街，是親子家族的天堂。",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=LaLaport+福岡",
+                                hours: "10:00 - 21:00",
+                                pricing: {
+                                    adult: "免費進入",
+                                    child: "免費",
+                                    senior: "免費",
+                                    note: "商場占地極廣，全館完全無障礙平坦設計，推車暢行無阻。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 3樓有專為兒童設計的戶外木質遊樂區與跑道，室內有超大玩具王國，放電首選！",
+                                seniorTip: "👵 設有超多舒適皮沙發供休息，美食街餐點選擇極多，適合三代同堂用餐。"
+                            }
+                        ]
                     },
                     {
-                        name: "LaLaport 福岡 (巨型鋼彈與購物)",
-                        time: "11:30 - 14:00",
-                        image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80",
-                        imageDesc: "門口巍然聳立的一比一實物大鋼彈",
-                        desc: "中午【LaLaport 福岡】：離機場非常近。可以看一比一的巨型鋼彈。商場內育嬰室設施完美、推車極度友善。大人在這裡可以進行電器、母嬰用品、服飾的最後補貨，並在美食街自由選擇午餐。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=LaLaport+福岡",
-                        hours: "10:00 - 21:00",
-                        pricing: {
-                            adult: "免費進入",
-                            child: "免費",
-                            senior: "免費",
-                            note: "商場寬敞，美食街涵蓋多家著名九州美食老店。"
-                        },
-                        calcEstimate: 0,
-                        kidsTip: "👶 3F配備豪華高規的親子育嬰哺乳室，並有玩具反斗城等兒童專屬商店，好推車。",
-                        seniorTip: "👵 全程平坦無障礙，各處配備高級皮沙發休息區，電器與特產在此一站式買齊極省力。"
-                    },
-                    {
-                        name: "福岡機場 → 返回溫馨的家",
+                        name: "搭乘地鐵前往福岡機場 → 返回溫馨的家",
+                        type: "交通",
                         time: "14:30",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Fukuoka_Airport_Domestic_Terminal_202011_01.jpg/640px-Fukuoka_Airport_Domestic_Terminal_202011_01.jpg",
-                        imageDesc: "返抵台灣的福岡機場國際線航廈",
-                        desc: "下午：提早 2.5～3 小時由包車送往福岡機場，安心報到掛行李，結束完美的三代同堂九州之旅！在通關後的免稅店可以做最後名產（福砂屋、明太子）大採購。",
-                        gmap: "https://www.google.com/maps/search/?api=1&query=福岡空港",
-                        hours: "24小時開放 (依航班為準)",
+                        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80",
+                        imageDesc: "地鐵博多站前往福岡機場（僅需2站）",
+                        desc: "若不使用包車，可從博多站直接搭乘福岡市地下鐵機場線，僅需 5 分鐘（2站路程）即可直達機場國內線航廈，隨後搭乘免費接駁巴士前往國際線航廈。費用低廉且時間極為精準。",
+                        gmap: "https://www.google.com/maps/search/?api=1&query=福岡空港駅",
+                        hours: "24小時開放",
                         pricing: {
-                            adult: "免費進入",
-                            child: "免費",
-                            senior: "免費",
-                            note: "包車直送出境大廳，不需要拖大件行李步行。"
+                            adult: "地鐵票約 260 日圓",
+                            child: "兒童票約 130 日圓",
+                            senior: "同成人價",
+                            note: "8大3小（1yo免票）地鐵費用試算：8大*260 + 2小*130 = 2,340 日圓。"
                         },
                         calcEstimate: 0,
-                        kidsTip: "👶 包車直達國際線門口，孩子在車上睡醒後可直接坐推車，免受轉乘疲累折騰。",
-                        seniorTip: "👵 通關後可使用機場免費輪椅租借，大廳有寬敞的咖啡座供長輩等待登機。"
+                        kidsTip: "👶 需注意拉行李與推車推嬰兒上下地鐵的安全，上下電梯人潮較多。",
+                        seniorTip: "👵 僅 5 分鐘車程，但站內需要走一段路，若行李較多長輩會稍顯吃力。",
+                        backupSpots: [
+                            {
+                                name: "提前前往機場免稅店大採購 → 返回溫馨的家",
+                                type: "交通",
+                                time: "14:00 - 15:30",
+                                image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=400&q=80",
+                                imageDesc: "福岡機場國際線免稅店伴手禮採購",
+                                desc: "提早 2.5 小時卸下行李抵達福岡機場辦理退稅與登機。福岡機場國際線航廈全新擴建，免稅店極為寬敞漂亮。可以悠閒採購九州名產（如福砂屋長崎蛋糕、一蘭拉麵包、明太子、ROYCE巧克力），免去在市區提行李的辛苦。",
+                                gmap: "https://www.google.com/maps/search/?api=1&query=福岡空港國際線免稅店",
+                                hours: "依航班時間營業",
+                                pricing: {
+                                    adult: "免費進入",
+                                    child: "免費",
+                                    senior: "免費",
+                                    note: "伴手禮自由採購消費。"
+                                },
+                                calcEstimate: 0,
+                                kidsTip: "👶 通關後有親子休息區與小型遊戲墊，上機前能安撫小孩。",
+                                seniorTip: "👵 通關後可申請機場免費輪椅服務，並可在免稅店旁的咖啡廳坐著休息等待登機。"
+                            }
+                        ]
                     }
                 ]
             }
         ];
-
         let tourData = [];
         let currentOption = 1;
         let currentDay = 1;
@@ -852,8 +1082,7 @@
 
         // INIT APP
         function init() {
-            initBackups(tourDataOption1, backupSpotsDataOption1);
-            initBackups(tourDataOption2, backupSpotsDataOption2);
+            initBackups(tourDataOption1);
             tourData = tourDataOption1;
             calculateTotalBudget();
             renderTabs();
@@ -886,7 +1115,7 @@
                 const isActive = item.day === currentDay;
                 const tabBtn = document.createElement('button');
                 tabBtn.className = `flex-shrink-0 px-4 py-1.5 rounded-xl text-[11px] font-extrabold transition-all duration-300 flex flex-col items-center gap-0.5 cursor-pointer ${isActive
-                    ? 'bg-primary-500 text-white shadow-md shadow-primary-500/20 scale-105'
+                    ? 'bg-gradient-to-br from-primary-500 to-indigo-600 text-white shadow-md shadow-primary-500/25 border border-primary-400/20 scale-105'
                     : 'bg-slate-50 text-slate-500 border border-slate-200/40 hover:bg-slate-100 hover:text-slate-700'
                     }`;
                 tabBtn.onclick = () => {
@@ -900,6 +1129,371 @@
                 `;
                 dayTabs.appendChild(tabBtn);
             });
+        }
+
+        // CARD IMAGE MARKUP GENERATOR
+        function getSpotImageMarkup(spot, heightClass = 'h-44') {
+            if (spot.splitImages) {
+                return `
+                    <div class="relative ${heightClass} w-full flex bg-slate-200 overflow-hidden">
+                      <div class="w-1/2 h-full border-r border-white relative overflow-hidden">
+                        <img src="${spot.splitImages[0].url}" alt="左圖" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/300x200/0d9488/ffffff?text=Image+1';">
+                        <span class="absolute bottom-2 left-2 bg-slate-900/75 text-white text-[9px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm shadow">${spot.splitImages[0].label}</span>
+                        ${spot.splitImages[0].author ? `
+                          <span class="absolute top-2 left-2 bg-black/60 text-white text-[8px] px-1.5 py-0.5 rounded scale-90 origin-top-left">📷 ${spot.splitImages[0].author}</span>
+                        ` : ''}
+                      </div>
+                      <div class="w-1/2 h-full relative overflow-hidden">
+                        <img src="${spot.splitImages[1].url}" alt="右圖" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/300x200/0f766e/ffffff?text=Image+2';">
+                        <span class="absolute bottom-2 right-2 bg-slate-900/75 text-white text-[9px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm shadow">${spot.splitImages[1].label}</span>
+                        ${spot.splitImages[1].author ? `
+                          <span class="absolute top-2 right-2 bg-black/60 text-white text-[8px] px-1.5 py-0.5 rounded scale-90 origin-top-right">📷 ${spot.splitImages[1].author}</span>
+                        ` : ''}
+                      </div>
+                      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 pt-8 pointer-events-none">
+                        <p class="text-[10px] text-white/95 font-semibold italic flex items-center gap-1">
+                          <i class="fa-solid fa-camera text-primary-400"></i> ${spot.imageDesc || ''}
+                        </p>
+                      </div>
+                    </div>
+                `;
+            } else if (spot.image) {
+                return `
+                    <div class="relative ${heightClass} w-full bg-slate-200 overflow-hidden">
+                      <img src="${spot.image}" alt="${spot.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80';">
+                      ${spot.author ? `
+                        <span class="absolute top-3 right-3 bg-black/60 text-white text-[9px] px-2 py-0.5 rounded-md backdrop-blur-sm shadow-sm">📷 ${spot.author}</span>
+                      ` : ''}
+                      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8 pointer-events-none">
+                        <p class="text-[10px] text-white/80 font-medium italic"><i class="fa-solid fa-camera mr-0.5 text-primary-400"></i> ${spot.imageDesc || spot.name}</p>
+                      </div>
+                    </div>
+                `;
+            }
+            return '';
+        }
+
+        // SIGHTSEEING CARD RENDERER
+        function renderSightseeingCard(spot, idx, day) {
+            const imgMarkup = getSpotImageMarkup(spot, 'h-44');
+            return `
+              <div class="bg-white rounded-3xl shadow-sm border border-slate-100 border-l-4 border-l-sky-500 overflow-hidden relative hover:shadow-md transition-shadow duration-300">
+                <!-- Time Indicator Badge -->
+                <div class="absolute top-3 left-3 bg-slate-900/60 backdrop-blur-md text-white text-[10px] font-extrabold px-3 py-1 rounded-full z-10 flex items-center gap-1">
+                  <i class="fa-regular fa-clock text-sky-300"></i> ${spot.time}
+                </div>
+
+                <!-- Inset Image Container -->
+                ${imgMarkup ? `<div class="mx-4 mt-4 rounded-2xl overflow-hidden shadow-inner relative">${imgMarkup}</div>` : ''}
+
+                <!-- Content Details -->
+                <div class="p-5 space-y-4">
+                  <div>
+                    <div class="flex items-start gap-2 mb-2 flex-wrap">
+                      <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-sky-100 bg-sky-50 text-[9px] font-extrabold text-sky-700">
+                        <i class="fa-solid fa-camera text-sky-500"></i>景點
+                      </span>
+                      <h3 class="text-base font-black text-slate-900 leading-tight flex-1 min-w-0">${spot.name}</h3>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed font-normal whitespace-pre-line">${spot.desc}</p>
+                  </div>
+
+                  <!-- Transportation Section -->
+                  ${spot.transform ? `
+                  <div class="bg-slate-50/60 border border-slate-100 rounded-2xl p-3 flex items-start gap-2.5 transition hover:bg-slate-50/90 duration-200">
+                    <div class="flex items-center justify-center w-7 h-7 rounded-xl bg-sky-500/10 text-sky-600 flex-shrink-0">
+                      <i class="fa-solid fa-route text-xs"></i>
+                    </div>
+                    <div class="space-y-0.5 flex-1 min-w-0">
+                      <span class="text-[9px] font-black text-slate-400 tracking-wider uppercase">交通方式</span>
+                      <p class="text-xs font-semibold text-slate-700 leading-relaxed">${spot.transform}</p>
+                    </div>
+                  </div>
+                  ` : ''}
+
+                  <!-- GOOGLE MAPS & BACKUP BUTTONS -->
+                  <div class="flex gap-2.5">
+                    ${spot.gmap ? `
+                      <a href="${spot.gmap}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-bold py-2.5 rounded-xl transition shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-location-arrow text-sky-600"></i> Google Maps
+                      </a>
+                    ` : `
+                      <div class="flex-1 inline-flex items-center justify-center gap-1.5 bg-slate-50/50 border border-slate-100 text-slate-400 text-xs font-bold py-2.5 rounded-xl select-none">
+                        <i class="fa-solid fa-ban text-slate-300"></i> 無定位點
+                      </div>
+                    `}
+                    <button onclick="openBackupModal(${day}, ${idx})" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-sky-50 border border-sky-100/60 hover:bg-sky-100/70 text-sky-700 text-xs font-bold py-2.5 rounded-xl transition shadow-sm cursor-pointer">
+                      <i class="fa-solid fa-arrows-rotate text-sky-600"></i> 備用景點
+                    </button>
+                  </div>
+
+                  <!-- ADMISSION TICKET DETAILS SECTION -->
+                  <div class="bg-sky-50/30 rounded-2xl p-4 border border-sky-100/50 space-y-2.5 text-xs text-slate-600">
+                    <div class="flex items-center gap-2 pb-2 border-b border-sky-100/75">
+                      <i class="fa-solid fa-ticket text-sky-500 text-sm"></i>
+                      <span class="font-extrabold text-sky-950">景點門票 & 開放時間</span>
+                    </div>
+                    <div class="grid grid-cols-1 gap-1.5">
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-regular fa-clock text-[10px]"></i> 開放時間：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.hours || '依現場營業為準'}</span>
+                      </div>
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-user-tie text-[10px]"></i> 成人門票：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.pricing?.adult || '免費'}</span>
+                      </div>
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-child text-[10px]"></i> 兒童/幼童：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.pricing?.child || '免費'}</span>
+                      </div>
+                      ${spot.pricing?.senior ? `
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-person-cane text-[10px]"></i> 長者特惠：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.pricing.senior}</span>
+                      </div>
+                      ` : ''}
+                      <div class="text-[10px] text-sky-800 mt-1 bg-sky-50/80 p-2 rounded-xl border border-sky-100/30 flex items-start gap-1">
+                        <i class="fa-solid fa-circle-exclamation mt-0.5 text-sky-500"></i>
+                        <span>${spot.pricing?.note || '無特殊注意事項。'}</span>
+                      </div>
+                      ${spot.calcEstimate ? `
+                      <div class="mt-1 pt-1.5 border-t border-sky-200/20 flex justify-between items-center text-sky-700 font-semibold text-[11px]">
+                        <span>11人家族門票試算：</span>
+                        <span class="bg-sky-50 px-2 py-0.5 rounded-md font-bold">約 ¥${spot.calcEstimate.toLocaleString()}</span>
+                      </div>
+                      ` : ''}
+                    </div>
+                  </div>
+
+                  <!-- TIPS GRID -->
+                  <div class="grid grid-cols-1 gap-2.5 pt-1">
+                    <div class="bg-sky-50/50 p-3 rounded-2xl border border-sky-100/30 text-xs">
+                      <span class="font-extrabold text-sky-950 flex items-center gap-1.5 mb-1">
+                        <i class="fa-solid fa-child-reaching text-sky-500"></i> 幼童貼心提示 (不到2歲 & 不到5歲)
+                      </span>
+                      <p class="text-slate-600 leading-relaxed">${spot.kidsTip}</p>
+                    </div>
+                    <div class="bg-slate-50/50 p-3 rounded-2xl border border-slate-100/50 text-xs">
+                      <span class="font-extrabold text-slate-900 flex items-center gap-1.5 mb-1">
+                        <i class="fa-solid fa-person-cane text-slate-500"></i> 長輩貼心提示 (超過60歲)
+                      </span>
+                      <p class="text-slate-600 leading-relaxed">${spot.seniorTip}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+        }
+
+        // TRANSPORTATION CARD RENDERER
+        function renderTransportationCard(spot, idx, day) {
+            const imgMarkup = getSpotImageMarkup(spot, 'h-36');
+            return `
+              <div class="bg-white rounded-3xl shadow-sm border border-slate-100 border-l-4 border-l-emerald-500 overflow-hidden relative hover:shadow-md transition-shadow duration-300">
+                <!-- Time Indicator Badge -->
+                <div class="absolute top-3 left-3 bg-emerald-900/75 backdrop-blur-md text-white text-[10px] font-extrabold px-3 py-1 rounded-full z-10 flex items-center gap-1 shadow-sm">
+                  <i class="fa-regular fa-clock text-emerald-300"></i> ${spot.time}
+                </div>
+
+                <!-- Compact Inset Image -->
+                ${imgMarkup ? `<div class="mx-4 mt-4 rounded-2xl overflow-hidden shadow-inner relative">${imgMarkup}</div>` : ''}
+
+                <!-- Content Details -->
+                <div class="p-5 space-y-4">
+                  <div>
+                    <div class="flex items-start gap-2 mb-2 flex-wrap">
+                      <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-emerald-100 bg-emerald-50 text-[9px] font-extrabold text-emerald-700">
+                        <i class="fa-solid fa-van-shuttle text-emerald-500"></i>交通
+                      </span>
+                      <h3 class="text-base font-black text-slate-900 leading-tight flex-1 min-w-0">${spot.name}</h3>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed font-normal whitespace-pre-line">${spot.desc}</p>
+                  </div>
+
+                  <!-- MAPS & BACKUPS -->
+                  <div class="flex gap-2.5">
+                    ${spot.gmap ? `
+                      <a href="${spot.gmap}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-bold py-2.5 rounded-xl transition shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-location-arrow text-emerald-600"></i> Google Maps
+                      </a>
+                    ` : `
+                      <div class="flex-1 inline-flex items-center justify-center gap-1.5 bg-slate-50/50 border border-slate-100 text-slate-400 text-xs font-bold py-2.5 rounded-xl select-none">
+                        <i class="fa-solid fa-ban text-slate-300"></i> 無定位點
+                      </div>
+                    `}
+                    <button onclick="openBackupModal(${day}, ${idx})" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-emerald-50 border border-emerald-100/60 hover:bg-emerald-100/70 text-emerald-700 text-xs font-bold py-2.5 rounded-xl transition shadow-sm cursor-pointer">
+                      <i class="fa-solid fa-arrows-rotate text-emerald-600"></i> 備用方案
+                    </button>
+                  </div>
+
+                  <!-- TICKET STYLE DETAILS SECTION -->
+                  <div class="bg-emerald-50/30 rounded-2xl p-4 border border-emerald-100/40 relative overflow-hidden text-xs text-slate-600">
+                    <!-- Ticket Punch holes (visual effect) -->
+                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-2.5 h-5 bg-slate-50 border border-slate-100 border-l-0 rounded-r-full"></div>
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2.5 h-5 bg-slate-50 border border-slate-100 border-r-0 rounded-l-full"></div>
+                    
+                    <div class="flex items-center gap-2 pb-2 border-b border-dashed border-emerald-200/80">
+                      <i class="fa-solid fa-ticket text-emerald-600 text-sm"></i>
+                      <span class="font-extrabold text-emerald-950">車程班次 & 乘車費用</span>
+                    </div>
+                    <div class="grid grid-cols-1 gap-1.5 pt-2.5">
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-regular fa-clock text-[10px]"></i> 車程時間：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.hours || '依路況為準'}</span>
+                      </div>
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-user-tie text-[10px]"></i> 交通費用：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.pricing?.adult || '免費/已含'}</span>
+                      </div>
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-child text-[10px]"></i> 兒童費用：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.pricing?.child || '免費/已含'}</span>
+                      </div>
+                      ${spot.pricing?.senior ? `
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-person-cane text-[10px]"></i> 長者費用：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.pricing.senior}</span>
+                      </div>
+                      ` : ''}
+                      <div class="text-[10px] text-emerald-800 mt-1 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100/30 flex items-start gap-1">
+                        <i class="fa-solid fa-circle-exclamation mt-0.5 text-emerald-500"></i>
+                        <span>${spot.pricing?.note || '專車點對點直達。'}</span>
+                      </div>
+                      ${spot.calcEstimate ? `
+                      <div class="mt-1 pt-1.5 border-t border-dashed border-emerald-200/50 flex justify-between items-center text-emerald-700 font-bold text-[11px]">
+                        <span>家族交通預算：</span>
+                        <span class="bg-emerald-50 px-2 py-0.5 rounded-md">約 ¥${spot.calcEstimate.toLocaleString()}</span>
+                      </div>
+                      ` : ''}
+                    </div>
+                  </div>
+
+                  <!-- PASSENGER TIPS GRID -->
+                  <div class="grid grid-cols-1 gap-2.5 pt-1">
+                    <div class="bg-emerald-50/50 p-3 rounded-2xl border border-emerald-100/30 text-xs">
+                      <span class="font-extrabold text-emerald-950 flex items-center gap-1.5 mb-1">
+                        <i class="fa-solid fa-baby-carriage text-emerald-500"></i> 幼童乘車提示
+                      </span>
+                      <p class="text-slate-600 leading-relaxed">${spot.kidsTip}</p>
+                    </div>
+                    <div class="bg-slate-50/50 p-3 rounded-2xl border border-slate-100/50 text-xs">
+                      <span class="font-extrabold text-slate-900 flex items-center gap-1.5 mb-1">
+                        <i class="fa-solid fa-person-cane text-slate-500"></i> 長輩乘車提示
+                      </span>
+                      <p class="text-slate-600 leading-relaxed">${spot.seniorTip}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+        }
+
+        // DINING CARD RENDERER
+        function renderDiningCard(spot, idx, day) {
+            const imgMarkup = getSpotImageMarkup(spot, 'h-40');
+            return `
+              <div class="bg-white rounded-3xl shadow-sm border border-slate-100 border-l-4 border-l-amber-500 overflow-hidden relative hover:shadow-md transition-shadow duration-300">
+                <!-- Time Indicator Badge -->
+                <div class="absolute top-3 left-3 bg-amber-900/75 backdrop-blur-md text-white text-[10px] font-extrabold px-3 py-1 rounded-full z-10 flex items-center gap-1 shadow-sm">
+                  <i class="fa-regular fa-clock text-amber-300"></i> ${spot.time}
+                </div>
+
+                <!-- Gourmet Inset Image -->
+                ${imgMarkup ? `<div class="mx-4 mt-4 rounded-2xl overflow-hidden shadow-inner relative">${imgMarkup}</div>` : ''}
+
+                <!-- Content Details -->
+                <div class="p-5 space-y-4">
+                  <div>
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                      <div class="flex items-start gap-2 flex-wrap">
+                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-amber-100 bg-amber-50 text-[9px] font-extrabold text-amber-700">
+                          <i class="fa-solid fa-utensils text-amber-500"></i>美食
+                        </span>
+                        <h3 class="text-base font-black text-slate-900 leading-tight flex-1 min-w-0">${spot.name}</h3>
+                      </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed font-normal whitespace-pre-line">${spot.desc}</p>
+                  </div>
+
+                  <!-- Transportation Section -->
+                  ${spot.transform ? `
+                  <div class="bg-slate-50/60 border border-slate-100 rounded-2xl p-3 flex items-start gap-2.5 transition hover:bg-slate-50/90 duration-200">
+                    <div class="flex items-center justify-center w-7 h-7 rounded-xl bg-amber-500/10 text-amber-600 flex-shrink-0">
+                      <i class="fa-solid fa-route text-xs"></i>
+                    </div>
+                    <div class="space-y-0.5 flex-1 min-w-0">
+                      <span class="text-[9px] font-black text-slate-400 tracking-wider uppercase">交通方式</span>
+                      <p class="text-xs font-semibold text-slate-700 leading-relaxed">${spot.transform}</p>
+                    </div>
+                  </div>
+                  ` : ''}
+
+                  <!-- MAPS & BACKUPS -->
+                  <div class="flex gap-2.5">
+                    ${spot.gmap ? `
+                      <a href="${spot.gmap}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-bold py-2.5 rounded-xl transition shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-location-arrow text-amber-600"></i> Google Maps
+                      </a>
+                    ` : `
+                      <div class="flex-1 inline-flex items-center justify-center gap-1.5 bg-slate-50/50 border border-slate-100 text-slate-400 text-xs font-bold py-2.5 rounded-xl select-none">
+                        <i class="fa-solid fa-ban text-slate-300"></i> 無定位點
+                      </div>
+                    `}
+                    <button onclick="openBackupModal(${day}, ${idx})" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-amber-50 border border-amber-100/60 hover:bg-amber-100/70 text-amber-700 text-xs font-bold py-2.5 rounded-xl transition shadow-sm cursor-pointer">
+                      <i class="fa-solid fa-arrows-rotate text-amber-600"></i> 備用餐廳
+                    </button>
+                  </div>
+
+                  <!-- RECEIPT STYLE DETAILS SECTION -->
+                  <div class="bg-amber-50/30 rounded-2xl p-4 border border-amber-100/40 space-y-2.5 text-xs text-slate-600 relative">
+                    <div class="flex items-center gap-2 pb-2 border-b border-dotted border-amber-200/80">
+                      <i class="fa-solid fa-receipt text-amber-600 text-sm"></i>
+                      <span class="font-extrabold text-amber-900">餐廳資訊 & 均消預算</span>
+                    </div>
+                    <div class="grid grid-cols-1 gap-1.5 pt-1">
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-regular fa-clock text-[10px]"></i> 營業時間：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.hours || '依現場營業為準'}</span>
+                      </div>
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-user-tie text-[10px]"></i> 每人均消：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.pricing?.adult || '現場付費'}</span>
+                      </div>
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-child text-[10px]"></i> 兒童餐點：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.pricing?.child || '提供兒童餐/可共食'}</span>
+                      </div>
+                      ${spot.pricing?.senior ? `
+                      <div class="flex justify-between items-start">
+                        <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-person-cane text-[10px]"></i> 長者用餐：</span>
+                        <span class="font-semibold text-slate-800 text-right">${spot.pricing.senior}</span>
+                      </div>
+                      ` : ''}
+                      <div class="text-[10px] text-amber-800 mt-1 bg-amber-50/80 p-2 rounded-xl border border-amber-100/30 flex items-start gap-1">
+                        <i class="fa-solid fa-circle-exclamation mt-0.5 text-amber-500"></i>
+                        <span>${spot.pricing?.note || '建議提早預訂位置以免排隊。'}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- FAMILY DINING TIPS GRID -->
+                  <div class="grid grid-cols-1 gap-2.5 pt-1">
+                    <div class="bg-amber-50/50 p-3 rounded-2xl border border-amber-100/30 text-xs">
+                      <span class="font-extrabold text-amber-950 flex items-center gap-1.5 mb-1">
+                        <i class="fa-solid fa-child-reaching text-amber-500"></i> 幼童用餐指南
+                      </span>
+                      <p class="text-slate-600 leading-relaxed">${spot.kidsTip}</p>
+                    </div>
+                    <div class="bg-slate-50/50 p-3 rounded-2xl border border-slate-100/50 text-xs">
+                      <span class="font-extrabold text-slate-900 flex items-center gap-1.5 mb-1">
+                        <i class="fa-solid fa-person-cane text-slate-500"></i> 長者用餐指南
+                      </span>
+                      <p class="text-slate-600 leading-relaxed">${spot.seniorTip}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
         }
 
         // RENDER ACTIVE DAY CONTENT
@@ -936,132 +1530,16 @@
         </div>
       `;
 
-            // RENDER EACH SPOT CARD
+            // RENDER EACH SPOT CARD USING SPECIALIZED RENDERERS
             data.spots.forEach((spot, idx) => {
-                let imageMarkup = '';
-
-                // Check if Day 1 split layout is requested
-                if (spot.splitImages) {
-                    imageMarkup = `
-            <div class="relative h-48 w-full flex bg-slate-200 overflow-hidden border-b border-slate-100">
-              <div class="w-1/2 h-full border-r border-white relative overflow-hidden">
-                <img src="${spot.splitImages[0].url}" alt="左圖" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/300x200/0d9488/ffffff?text=Kumamoto+Castle';">
-                <span class="absolute bottom-2 left-2 bg-slate-900/75 text-white text-[9px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm shadow">${spot.splitImages[0].label}</span>
-                ${spot.splitImages[0].author ? `
-                  <span class="absolute top-2 left-2 bg-black/60 text-white text-[8px] px-1.5 py-0.5 rounded scale-90 origin-top-left">📷 ${spot.splitImages[0].author}</span>
-                ` : ''}
-              </div>
-              <div class="w-1/2 h-full relative overflow-hidden">
-                <img src="${spot.splitImages[1].url}" alt="右圖" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/300x200/0f766e/ffffff?text=Josaien';">
-                <span class="absolute bottom-2 right-2 bg-slate-900/75 text-white text-[9px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm shadow">${spot.splitImages[1].label}</span>
-                ${spot.splitImages[1].author ? `
-                  <span class="absolute top-2 right-2 bg-black/60 text-white text-[8px] px-1.5 py-0.5 rounded scale-90 origin-top-right">📷 ${spot.splitImages[1].author}</span>
-                ` : ''}
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 pt-8 pointer-events-none">
-                <p class="text-[10px] text-white/95 font-semibold italic flex items-center gap-1">
-                  <i class="fa-solid fa-camera text-primary-400"></i> ${spot.imageDesc}
-                </p>
-              </div>
-            </div>
-          `;
+                const type = spot.type || "景點";
+                if (type === "交通") {
+                    html += renderTransportationCard(spot, idx, data.day);
+                } else if (type === "吃喝") {
+                    html += renderDiningCard(spot, idx, data.day);
                 } else {
-                    imageMarkup = `
-            <div class="relative h-48 w-full bg-slate-200 overflow-hidden border-b border-slate-100">
-              <img src="${spot.image}" alt="${spot.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80';">
-              ${spot.author ? `
-                <span class="absolute top-3 right-3 bg-black/60 text-white text-[9px] px-2 py-0.5 rounded-md backdrop-blur-sm shadow-sm">📷 ${spot.author}</span>
-              ` : ''}
-              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8 pointer-events-none">
-                <p class="text-[10px] text-white/80 font-medium italic"><i class="fa-solid fa-camera mr-0.5 text-primary-400"></i> ${spot.imageDesc}</p>
-              </div>
-            </div>
-          `;
+                    html += renderSightseeingCard(spot, idx, data.day);
                 }
-
-                html += `
-          <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden relative hover:shadow-md transition-shadow duration-300">
-            <!-- Time Indicator Badge -->
-            <div class="absolute top-3 left-3 bg-slate-900/60 backdrop-blur-md text-white text-[10px] font-extrabold px-3 py-1 rounded-full z-10 flex items-center gap-1">
-              <i class="fa-regular fa-clock text-primary-300"></i> ${spot.time}
-            </div>
-
-            <!-- Image Area -->
-            ${imageMarkup}
-
-            <!-- Content Details -->
-            <div class="p-5 space-y-4">
-              <div>
-                <h3 class="text-base font-black text-slate-900 leading-tight">${spot.name}</h3>
-                <p class="text-xs text-slate-500 mt-2 leading-relaxed font-normal">${spot.desc}</p>
-              </div>
-
-              <!-- GOOGLE MAPS & BACKUP BUTTONS -->
-              <div class="flex gap-2.5">
-                <a href="${spot.gmap}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-bold py-2.5 rounded-xl transition shadow-sm cursor-pointer">
-                  <i class="fa-solid fa-location-arrow text-primary-600"></i> Google Maps
-                </a>
-                <button onclick="openBackupModal(${data.day}, ${idx})" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-primary-50 border border-primary-100/60 hover:bg-primary-100/70 text-primary-700 text-xs font-bold py-2.5 rounded-xl transition shadow-sm cursor-pointer">
-                  <i class="fa-solid fa-arrows-rotate text-primary-600"></i> 備用景點
-                </button>
-              </div>
-
-              <!-- PRICING & HOURS DETAILS SECTION -->
-              <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100 space-y-2.5 text-xs text-slate-600">
-                <div class="flex items-center gap-2 pb-2 border-b border-slate-200/60">
-                  <i class="fa-solid fa-ticket text-accent-500 text-sm"></i>
-                  <span class="font-extrabold text-slate-800">消費 & 開放時間</span>
-                </div>
-                <div class="grid grid-cols-1 gap-1.5">
-                  <div class="flex justify-between items-start">
-                    <span class="text-slate-500 flex items-center gap-1"><i class="fa-regular fa-clock text-[10px]"></i> 開放時間：</span>
-                    <span class="font-semibold text-slate-800 text-right">${spot.hours || '依現場營業為準'}</span>
-                  </div>
-                  <div class="flex justify-between items-start">
-                    <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-user-tie text-[10px]"></i> 成人門票：</span>
-                    <span class="font-semibold text-slate-800 text-right">${spot.pricing?.adult || '免費'}</span>
-                  </div>
-                  <div class="flex justify-between items-start">
-                    <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-child text-[10px]"></i> 兒童/幼童：</span>
-                    <span class="font-semibold text-slate-800 text-right">${spot.pricing?.child || '免費'}</span>
-                  </div>
-                  ${spot.pricing?.senior ? `
-                  <div class="flex justify-between items-start">
-                    <span class="text-slate-500 flex items-center gap-1"><i class="fa-solid fa-person-cane text-[10px]"></i> 長者特惠：</span>
-                    <span class="font-semibold text-slate-800 text-right">${spot.pricing.senior}</span>
-                  </div>
-                  ` : ''}
-                  <div class="text-[10px] text-accent-700 mt-1 bg-accent-50 p-2 rounded-xl border border-accent-100/30 flex items-start gap-1">
-                    <i class="fa-solid fa-circle-exclamation mt-0.5 text-accent-500"></i>
-                    <span>${spot.pricing?.note || '無特殊注意事項。'}</span>
-                  </div>
-                  ${spot.calcEstimate ? `
-                  <div class="mt-1 pt-1.5 border-t border-slate-200/40 flex justify-between items-center text-primary-700 font-semibold text-[11px]">
-                    <span>11人家族門票試算：</span>
-                    <span class="bg-primary-50 px-2 py-0.5 rounded-md font-bold">約 ¥${spot.calcEstimate.toLocaleString()}</span>
-                  </div>
-                  ` : ''}
-                </div>
-              </div>
-
-              <!-- KIDS & SENIOR TIPS GRID -->
-              <div class="grid grid-cols-1 gap-2.5 pt-1">
-                <div class="bg-primary-50/60 p-3 rounded-2xl border border-primary-100/40 text-xs">
-                  <span class="font-extrabold text-primary-950 flex items-center gap-1.5 mb-1">
-                    <i class="fa-solid fa-child-reaching text-primary-500"></i> 幼童貼心提示 (不到2歲 & 不到5歲)
-                  </span>
-                  <p class="text-slate-600 leading-relaxed">${spot.kidsTip}</p>
-                </div>
-                <div class="bg-accent-50/60 p-3 rounded-2xl border border-accent-100/30 text-xs">
-                  <span class="font-extrabold text-accent-950 flex items-center gap-1.5 mb-1">
-                    <i class="fa-solid fa-person-cane text-accent-500"></i> 長輩貼心提示 (超過60歲)
-                  </span>
-                  <p class="text-slate-600 leading-relaxed">${spot.seniorTip}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
             });
 
             contentArea.innerHTML = html;
@@ -1102,9 +1580,9 @@
                 const btn = document.getElementById(`nav-${t}`);
                 if (btn) {
                     if (t === tabId) {
-                        btn.className = "flex flex-col items-center gap-1 text-primary-600 font-extrabold cursor-pointer transition-all duration-300 scale-105";
+                        btn.className = "flex flex-col items-center gap-0.5 text-primary-600 font-bold cursor-pointer transition-all duration-300 scale-105 py-1.5 px-3 rounded-2xl bg-primary-50/85 border border-primary-100/60 shadow-sm shadow-primary-500/5";
                     } else {
-                        btn.className = "flex flex-col items-center gap-1 text-slate-400 hover:text-primary-500 transition-all duration-300 cursor-pointer";
+                        btn.className = "flex flex-col items-center gap-0.5 text-slate-400 hover:text-slate-600 hover:bg-slate-50/60 transition-all duration-300 cursor-pointer py-1.5 px-3 rounded-2xl border border-transparent";
                     }
                 }
             });
@@ -1130,623 +1608,6 @@
             }
         }
 
-        // BACKUP SPOTS SYSTEM
-        const backupSpotsDataOption1 = {
-            // Day 1
-            "1-0": [
-                {
-                    name: "水前寺成趣園",
-                    time: "14:00 - 17:00",
-                    image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "幽靜的桃山式迴遊庭園水前寺成趣園",
-                    desc: "水前寺成趣園是一座美麗的桃山式迴遊庭園。園內以阿蘇伏流水湧出成池，並模仿東海道五十三次風景（如迷你富士山），環境清幽。非常適合長輩散步，茶屋還可以品嚐日式抹茶與和菓子。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=水前寺成趣園",
-                    hours: "08:30 - 17:00",
-                    pricing: {
-                        adult: "400 日圓",
-                        child: "200 日圓",
-                        senior: "同成人價",
-                        note: "學齡前兒童免費！"
-                    },
-                    calcEstimate: 3200,
-                    kidsTip: "👶 庭園有碎石子路，推車稍有顛簸，但餵魚活動孩子會很愛。",
-                    seniorTip: "👵 長輩極佳去處，平坦秀麗，可在古樸茶屋賞景喝茶。"
-                },
-                {
-                    name: "熊本熊廣場 (Kumamon Square)",
-                    time: "14:00 - 17:00",
-                    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "熊本熊營業部長辦公室與表演",
-                    desc: "熊本最火紅的吉祥物「熊本熊」營業部長的辦公室！可以參觀部長辦公室、購買限定周邊，若安排好時間還能親眼見到熊本熊部長本尊的熱情舞蹈表演，絕對逗得全家哈哈大笑。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=熊本熊廣場",
-                    hours: "10:00 - 19:00 (部長表演時間請查官網)",
-                    pricing: {
-                        adult: "免費入場",
-                        child: "免費入場",
-                        senior: "免費入場",
-                        note: "見面會名額有限，需提前排隊入場。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 看到巨大的熊本熊唱跳，小朋友會非常興奮！室內冷氣充足。",
-                    seniorTip: "👵 全程室內有座椅，不用走路，適合與孫子一起同樂。"
-                }
-            ],
-            "1-1": [
-                {
-                    name: "晚餐：黑亭拉麵 (下通店)",
-                    time: "18:00",
-                    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "焦香蒜泥豚骨拉麵",
-                    desc: "創立於昭和32年的熊本拉麵老店。以自製的濃郁豚骨湯頭，加上焦香蒜泥與自製中粗麵，口味獨特香醇，是熊本拉麵的代表性經典。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=黑亭拉麵+下通店",
-                    hours: "10:30 - 22:00",
-                    pricing: {
-                        adult: "約 900 ~ 1,500 日圓",
-                        child: "兒童拉麵約 500 日圓",
-                        senior: "同成人價",
-                        note: "拉麵消費，無門票限制。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 有兒童座椅，可點選調味較淡的拉麵或叉燒飯，桌上備有餐具。",
-                    seniorTip: "👵 湯頭濃郁，若長輩口味偏淡可請店家調淡（薄味 Usukuchi）。"
-                },
-                {
-                    name: "晚餐：菅乃屋馬肉料理 (櫻町店)",
-                    time: "18:00",
-                    image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "熊本鄉土料理：馬肉刺身與馬肉燒肉",
-                    desc: "熊本最有名的鄉土料理「馬肉刺身（馬刺し）」名店。馬肉低脂高蛋白，口感鮮甜嫩滑。櫻町店裝潢精緻現代，適合家族聚餐體驗特殊料理。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=菅乃屋+櫻町店",
-                    hours: "11:00 - 22:00",
-                    pricing: {
-                        adult: "套餐約 4,000 ~ 8,000 日圓",
-                        child: "提供熟食及熟馬肉蓋飯",
-                        senior: "同成人價",
-                        note: "預約制，建議提前預訂大桌。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 備有熟食兒童蓋飯，幼童不建議食用生馬肉，可吃烤馬肉或熟物。",
-                    seniorTip: "👵 馬肉健康無負擔，肉質富含鐵質與營養，對長輩身體很好。"
-                }
-            ],
-            // Day 2
-            "2-0": [
-                {
-                    name: "阿蘇卡德利動物樂園 (Cuddly Dome)",
-                    time: "10:00 - 12:30",
-                    image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "與可愛黑熊及各種動物互動",
-                    desc: "非常受家族歡迎的動物互動樂園！這裡有知名的「猩猩小龐與詹姆士」的黑猩猩劇場，還能親手餵食小熊、水豚、小狗等，是小小孩與長輩的動物天堂。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=阿蘇卡德利動物樂園",
-                    hours: "09:30 - 17:00",
-                    pricing: {
-                        adult: "2,400 日圓",
-                        child: "中小學生 1,300 日圓 / 3歲以上幼兒 900 日圓",
-                        senior: "同成人價 2,400 日圓",
-                        note: "門票試算：8大*2400 + 2位5歲*900 + 1位1歲半(免費) = 21,000 日圓。"
-                    },
-                    calcEstimate: 21000,
-                    kidsTip: "👶 互動區非常溫和，可以親手餵羊駝，推車租借方便。",
-                    seniorTip: "👵 有定時室內動物秀，長輩可以坐著舒適觀看，不用走太多路。"
-                },
-                {
-                    name: "大觀峰展望台",
-                    time: "10:00 - 12:30",
-                    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "俯瞰阿蘇五岳與巨大火山口盆地",
-                    desc: "阿蘇外輪山最高峰，擁有 360 度無死角的大全景。在此可以鳥瞰整個阿蘇谷地、阿蘇五岳（宛如涅槃佛像）與九重連山，壯麗無邊的景象讓人心曠神怡。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=大觀峰",
-                    hours: "24小時開放",
-                    pricing: {
-                        adult: "免費開放 (免停車費)",
-                        child: "免費",
-                        senior: "免費",
-                        note: "山上風大，建議準備薄外套防風。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 步道平坦但有坡度，需牽好幼童。草地上拍照極美。",
-                    seniorTip: "👵 停車場旁即有平坦觀景區，長輩可免走長步道，直接在商店旁觀賞壯麗景觀。"
-                }
-            ],
-            "2-1": [
-                {
-                    name: "中餐：高森田樂之里 (圍爐裏炭烤)",
-                    time: "12:30 - 13:30",
-                    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "傳統日式圍爐裏炭火燒烤",
-                    desc: "擁有 200 年歷史的古民家餐廳。圍著日式傳統炭火爐（圍爐裏），享用炭烤阿蘇名產紅鱒魚、赤牛串、味噌田樂豆腐及烤年糕，極具日式鄉土氛圍。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=高森田樂之里",
-                    hours: "11:00 - 18:00 (週三公休)",
-                    pricing: {
-                        adult: "田樂套餐約 2,500 ~ 3,500 日圓",
-                        child: "可單點烤年糕、烏龍麵",
-                        senior: "同成人價",
-                        note: "炭火爐旁溫度較高，帶小孩需特別注意安全。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 需特別提防小朋友伸手摸炭火，可安排坐離炭爐稍遠的榻榻米席。",
-                    seniorTip: "👵 坐在日式古民家裡，一邊喝著熱湯一邊品嚐懷舊炭烤，非常有氣氛。"
-                }
-            ],
-            "2-2": [
-                {
-                    name: "九重夢大吊橋",
-                    time: "15:30 - 17:00",
-                    image: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "日本第一高的步行者專用大吊橋",
-                    desc: "海拔 777 米、高 173 米的日本第一高步行專用大吊橋。漫步於橋上，可 360 度觀賞九重連山，以及入選「日本瀑布百選」的震動之瀑（優美絕倫）。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=九重夢大吊橋",
-                    hours: "08:30 - 17:00",
-                    pricing: {
-                        adult: "500 日圓",
-                        child: "小學生 200 日圓 / 幼兒免費",
-                        senior: "同成人價 500 日圓",
-                        note: "8大3小（幼兒皆免費）試算門票：8大*500 = 4,000 日圓。"
-                    },
-                    calcEstimate: 4000,
-                    kidsTip: "👶 橋面寬敞安全，兩側護網極高，但風大且部分橋面可透視下方，膽小幼兒需抱行。",
-                    seniorTip: "👵 長輩若無懼高症，漫步在平坦的橋面賞景極佳；若懼高，可在橋頭觀景台喝咖啡休息。"
-                }
-            ],
-            // Day 3
-            "3-0": [
-                {
-                    name: "城島高原遊樂園 (Kijima Kogen Park)",
-                    time: "09:30 - 13:00",
-                    image: "https://images.unsplash.com/photo-1513885045260-6b3086b24c17?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "城島高原豐富好玩的親子遊樂設施",
-                    desc: "位於由布岳山麓的高原遊樂園。擁有著名的木製雲霄飛車「朱庇特」，但也設有大量的「Toy Kingdom」室內玩具王國、旋轉木馬 and 適合 5 歲小孩的溫和設施，是完美的親子戶外景點。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=城島高原遊樂園",
-                    hours: "10:00 - 17:00",
-                    pricing: {
-                        adult: "入園料 1,500 日圓 (遊樂設施另計)",
-                        child: "3歲以上入園料 600 日圓",
-                        senior: "65歲以上長者 600 日圓 (需證件)",
-                        note: "8大3小（含2長者，1位1歲半免票）試算：6大*1500 + 2長者*600 + 2小*600 = 11,400 日圓。"
-                    },
-                    calcEstimate: 11400,
-                    kidsTip: "👶 「玩具王國」室內館有成千上萬的莉卡娃娃、積木和森林家族，幼童可玩數小時！",
-                    seniorTip: "👵 園區內有許多大樹陰涼處與長椅，高山空氣清涼，陪同入園散步很愜意。"
-                },
-                {
-                    name: "別府鶴見岳索道 (Beppu Ropeway)",
-                    time: "09:30 - 11:30",
-                    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "搭乘大型纜車直達鶴見岳山頂",
-                    desc: "搭乘西日本最大級的 101 人座纜車，僅需 10 分鐘即可登上標高 1375 米的鶴見岳山頂。山頂上可飽覽別府灣、別府市區以及阿蘇山群的宏偉景色，四季皆有不同美景（春櫻、夏綠、秋楓、冬霧淞）。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=別府鶴見岳索道",
-                    hours: "09:00 - 17:00",
-                    pricing: {
-                        adult: "往返 1,800 日圓",
-                        child: "4歲以上往返 900 日圓 / 4歲以下免費",
-                        senior: "65歲以上往返 1,600 日圓 (需證件)",
-                        note: "8大3小（2長者，1位1歲半免票）試算：6大*1800 + 2長者*1600 + 2小*900 = 15,800 日圓。"
-                    },
-                    calcEstimate: 15800,
-                    kidsTip: "👶 大纜車平穩舒適，車廂內可推推車進入，幼兒看著窗外爬升會非常新奇。",
-                    seniorTip: "👵 免去登山勞累，下了纜車即是展望台，十分平坦好走，極為推薦長輩參觀。"
-                }
-            ],
-            "3-1": [
-                {
-                    name: "別府海濱砂湯",
-                    time: "13:30 - 14:30",
-                    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "別府灣畔獨特的天然海濱砂浴",
-                    desc: "別府最著名的天然溫泉沙浴！穿著浴衣躺在海邊，由服務人員用溫泉加熱過的黑色海沙覆蓋全身，一邊聽著海浪聲，一邊感受全身出汗的舒爽排毒體驗。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=別府海濱砂湯",
-                    hours: "08:30 - 18:00 (週三公休)",
-                    pricing: {
-                        adult: "1,500 日圓 (含浴衣租借)",
-                        child: "同成人價 (不建議太小幼兒體驗)",
-                        senior: "同成人價 1,500 日圓",
-                        note: "8位大人門票試算，小孩建議不玩。"
-                    },
-                    calcEstimate: 12000,
-                    kidsTip: "👶 幼童不適合沙浴，可在防波堤旁玩沙，或在休息區由部分大人輪流照顧。",
-                    seniorTip: "👵 砂溫熱重壓對促進血液循環、舒緩關節痛極佳，長輩一定會非常喜愛。"
-                },
-                {
-                    name: "高崎山自然動物園 (野生猴區)",
-                    time: "13:30 - 14:30",
-                    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "上千隻野生日本獼猴大集合",
-                    desc: "位於高崎山，這裡棲息著大約 1000 隻野生日本獼猴。遊客可以近距離觀察頑皮的小猴子嬉戲、猴王進食等有趣場景，園區內還有可愛的單軌小火車可搭乘上山。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=高崎山自然動物園",
-                    hours: "09:00 - 17:00",
-                    pricing: {
-                        adult: "520 日圓 + 單軌車 110 日圓",
-                        child: "中小學生 260 日圓 / 幼兒免費",
-                        senior: "同成人價 (520 + 110)",
-                        note: "門票極便宜。8大3小（幼童免票）試算：8大*(520+110) = 5,040 日圓。"
-                    },
-                    calcEstimate: 5040,
-                    kidsTip: "👶 搭乘黃色的「猴子單軌車」上山，小朋友很愛！園內嚴禁攜帶食物或挑釁猴子。",
-                    seniorTip: "👵 單軌小火車直達山頂猴群區，長輩免爬陡坡，非常省力好玩。"
-                }
-            ],
-            // Day 4
-            "4-0": [
-                {
-                    name: "福岡塔 & 百道海濱公園",
-                    time: "09:30 - 13:00",
-                    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "福岡地標福岡塔與歐風海濱沙灘",
-                    desc: "高 234 米的日本最高海濱塔。從 123 米高的展望台可以 360 度鳥瞰福岡市區與博多灣。塔下即是百道濱海濱公園，擁有美麗的歐式建築餐廳與白沙灘，極富度假氣息。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=福岡塔",
-                    hours: "09:30 - 22:00",
-                    pricing: {
-                        adult: "800 日圓",
-                        child: "中小學生 500 日圓 / 4歲以上幼兒 200 日圓",
-                        senior: "65歲以上長者 720 日圓 (需證件)",
-                        note: "8大3小（含2長者，1yo免票）試算：6大*800 + 2長者*720 + 2小*200 = 6,640 日圓。"
-                    },
-                    calcEstimate: 6640,
-                    kidsTip: "👶 展望台有 VR 體驗與戳章收集。下方的沙灘極適合小小孩玩沙踩水。",
-                    seniorTip: "👵 電梯直達，全無障礙通道，長輩可以坐著靜靜享受高空海景。"
-                },
-                {
-                    name: "大濠公園 & 福岡市美術館",
-                    time: "09:30 - 13:00",
-                    image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "綠意盎然的大濠公園湖景與美術館",
-                    desc: "福岡市中心的巨大水上公園，仿造西湖設計。遊客可租借可愛的鴨子天鵝船在湖面悠遊。湖畔設有日本庭園與福岡市美術館（門外有草間彌生的南瓜），是極佳的慢活綠洲。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=大濠公園",
-                    hours: "24小時開放 (美術館09:30-17:30)",
-                    pricing: {
-                        adult: "免費入園 (天鵝船約 1,000 ~ 1,600 日圓/30分鐘)",
-                        child: "免費",
-                        senior: "免費",
-                        note: "在湖畔的星巴克喝咖啡、看水鳥，是日式慢活的代表。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 公園內有大型兒童遊樂場「鯨魚公園」，溜滑梯與沙坑讓小孩玩得不亦樂乎。",
-                    seniorTip: "👵 環湖步道全平坦無障礙，湖風吹拂，非常適合長輩悠閒散步。"
-                }
-            ],
-            "4-1": [
-                {
-                    name: "福岡 teamLab Forest (E・ZO FUKUOKA)",
-                    time: "14:30 - 17:30",
-                    image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "teamLab沉浸式數位藝術森林",
-                    desc: "位於福岡巨蛋旁的 Boss E・ZO 娛樂大樓內。teamLab Forest 分為「捕獲並收集的森林」和「運動森林」。遊客可以用手機捕捉光影小動物，或在立體的光影空間內彈跳律動，是超夢幻的拍照與體驗景點。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=teamLab+Forest+Fukuoka",
-                    hours: "11:00 - 20:00",
-                    pricing: {
-                        adult: "2,200 日圓",
-                        child: "中學生以下 800 日圓 / 3歲以下免費",
-                        senior: "同成人價 2,200 日圓",
-                        note: "8大3小（1yo免費）試算：8大*2200 + 2小*800 = 19,200 日圓。"
-                    },
-                    calcEstimate: 19200,
-                    kidsTip: "👶 絢麗的光影和互動投射讓小孩像捉迷藏一樣興奮！部分高低不平路段需小心行走。",
-                    seniorTip: "👵 室內冷氣充足。雖然有高低起伏的光影地面，但可以走平緩觀賞通道，奇幻景色十分新鮮。"
-                },
-                {
-                    name: "福岡巨蛋 & Boss E・ZO FUKUOKA",
-                    time: "14:30 - 17:30",
-                    image: "https://images.unsplash.com/photo-1513885045260-6b3086b24c17?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "福岡軟銀鷹主場巨蛋與頂級娛樂中心",
-                    desc: "造訪福岡軟銀鷹棒球隊的主場巨蛋！巨蛋旁的 Boss E_ZO 內有三麗鷗主題館（Sanrio Characters Dream Cafe）、棒球體驗館、和頂樓的絕景滑梯。周邊還有大商場 MARK IS 福岡 momochi，方便全家購物聚餐。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=Boss+E・ZO+FUKUOKA",
-                    hours: "11:00 - 22:00",
-                    pricing: {
-                        adult: "免費進入商場 (各體驗館門票另計)",
-                        child: "免費",
-                        senior: "免費",
-                        note: "商場寬敞平坦，三麗鷗館及美食街非常適合家族在下午輕鬆度過。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 三麗鷗家族主題區有超多拍照打卡點，美食街還有兒童專屬用餐矮桌椅區。",
-                    seniorTip: "👵 巨蛋周邊有平坦的高架步道直通商場，內部有無數長椅與咖啡廳，休閒度滿分。"
-                }
-            ],
-            // Day 5
-            "5-0": [
-                {
-                    name: "太宰府天滿宮",
-                    time: "10:00 - 13:00",
-                    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "太宰府天滿宮御本殿與表參道星巴克",
-                    desc: "祭祀學問之神菅原道真的全國天滿宮總本社。表參道非常熱鬧，可以品嚐現烤的特產梅枝餅（梅ヶ枝餅），並參觀由大師隈研吾設計的木造星巴克。庭園古木參天，太鼓橋與菖蒲池景色優美。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=太宰府天滿宮",
-                    hours: "06:30 - 19:00",
-                    pricing: {
-                        adult: "免費參拜 (免門票)",
-                        child: "免費",
-                        senior: "免費",
-                        note: "表參道步行街鋪設平整，但有部分碎石子神社區，推車可避開碎石繞行。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 神社前的「御神牛」銅像，傳說摸牛頭能變聰明，小朋友會很喜歡去排隊摸摸牛角。",
-seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在星巴克或日式茶屋坐下休息，極具文化氛圍。"
-                },
-                {
-                    name: "博多運河城 (Canal City Hakata)",
-                    time: "10:00 - 13:30",
-                    image: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "大型水舞表演與博多拉麵競技場",
-                    desc: "福岡市區最經典的半開放式巨型購物中心。一條人工運河貫忘其中，每半點會上演震撼的音樂噴泉水舞。5樓還有「拉麵競技場」，集合了全日本 8 家頂尖拉麵店，是吃拉麵和血拼的聖地。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=博多運河城",
-                    hours: "10:00 - 21:00 (餐廳至23:00)",
-                    pricing: {
-                        adult: "免費進入 (水舞秀免費觀賞)",
-                        child: "免費",
-                        senior: "免費",
-                        note: "備有迪士尼、吉卜力橡子共和國及三麗鷗專賣店，大人小孩均能買個痛快。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 3D水舞噴泉極為壯觀，還常有動漫（如海賊王、鋼彈）主題水幕秀，小孩會看得目不轉睛。",
-                    seniorTip: "👵 全程室內商場，配備無障礙電梯與無障礙洗手間，下雨天也完全不受影響。"
-                },
-                {
-                    name: "LaLaport 福岡 (1:1 鋼彈)",
-                    time: "10:00 - 13:30",
-                    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "1:1 RG實物大 ν 鋼彈立像",
-                    desc: "全新福岡購物地標！最矚目的是門口高達 24.8 米的 1:1 實物大 ν 鋼彈立像，定時還會有擺頭跟亮燈的動態演出。商場內有巨大的玩具反斗城、KidZania 兒童職業體驗館，以及極大的優雅美食街，是親子家族的天堂。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=LaLaport+福岡",
-                    hours: "10:00 - 21:00",
-                    pricing: {
-                        adult: "免費進入",
-                        child: "免費",
-                        senior: "免費",
-                        note: "商場占地極廣，全館完全無障礙平坦設計，推車暢行無阻。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 3樓有專為兒童設計的戶外木質遊樂區與跑道，室內有超大玩具王國，放電首選！",
-                    seniorTip: "👵 設有超多舒適皮沙發供休息，美食街餐點選擇極多，適合三代同堂用餐。"
-                }
-            ],
-            "5-1": [
-                {
-                    name: "搭乘地鐵前往福岡機場 → 返回溫馨的家",
-                    time: "14:30",
-                    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "地鐵博多站前往福岡機場（僅需2站）",
-                    desc: "若不使用包車，可從博多站直接搭乘福岡市地下鐵機場線，僅需 5 分鐘（2站路程）即可直達機場國內線航廈，隨後搭乘免費接駁巴士前往國際線航廈。費用低廉且時間極為精準。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=福岡空港駅",
-                    hours: "24小時開放",
-                    pricing: {
-                        adult: "地鐵票約 260 日圓",
-                        child: "兒童票約 130 日圓",
-                        senior: "同成人價",
-                        note: "8大3小（1yo免票）地鐵費用試算：8大*260 + 2小*130 = 2,340 日圓。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 需注意拉行李與推車推嬰兒上下地鐵的安全，上下電梯人潮較多。",
-                    seniorTip: "👵 僅 5 分鐘車程，但站內需要走一段路，若行李較多長輩會稍顯吃力。"
-                },
-                {
-                    name: "提前前往機場免稅店大採購 → 返回溫馨的家",
-                    time: "14:00 - 15:30",
-                    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "福岡機場國際線免稅店伴手禮採購",
-                    desc: "提早 2.5 小時抵達福岡機場辦理退稅與登機。福岡機場國際線航廈全新擴建，免稅店極為寬敞漂亮。可以悠閒採購九州名產（如福砂屋長崎蛋糕、一蘭拉麵包、明太子、ROYCE巧克力），免去在市區提行李的辛苦。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=福岡空港國際線免稅店",
-                    hours: "依航班時間營業",
-                    pricing: {
-                        adult: "免費進入",
-                        child: "免費",
-                        senior: "免費",
-                        note: "伴手禮自由採購消費。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 通關後有親子休息區與小型遊戲墊，上機前能安撫小孩。",
-                    seniorTip: "👵 通關後可申請機場免費輪椅服務，並可在免稅店旁的咖啡廳坐著休息等待登機。"
-                }
-            ]
-        };
-        const backupSpotsDataOption2 = {
-            "1-0": [
-                {
-                    name: "福岡塔 & 百道海濱公園",
-                    time: "15:00 - 17:30",
-                    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "福岡地標福岡塔與歐風海濱沙灘",
-                    desc: "高 234 米的日本最高海濱塔。從 123 米高的展望台可以 360 度鳥瞰福岡市區與博多灣。塔下即是百道濱海濱公園，擁有美麗的歐式建築餐廳與白沙灘，極富度假氣息。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=福岡塔",
-                    hours: "09:30 - 22:00",
-                    pricing: {
-                        adult: "800 日圓",
-                        child: "中小學生 500 日圓 / 4歲以上 200 日圓",
-                        senior: "65歲以上 720 日圓 (需證件)",
-                        note: "8大3小試算：6大*800 + 2長者*720 + 2小*200 = 6,640 日圓。"
-                    },
-                    calcEstimate: 6640,
-                    kidsTip: "👶 展望台有 VR 體驗與戳章收集。下方的沙灘極適合小小孩玩沙踩水。",
-                    seniorTip: "👵 電梯直達，全無障礙通道，長輩可以坐著靜靜享受高空海景."
-                }
-            ],
-            "1-1": [
-                {
-                    name: "博多拉麵競技場 (博多運河城5F)",
-                    time: "18:00",
-                    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
-                    imageDesc: "焦香豚骨拉麵",
-                    desc: "博多運河城5F聚集了全日本最著名的拉麵店，長輩和大人可以點選自己喜歡口味的拉麵，小朋友對運河城整點水舞表演會非常興奮。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=博多運河城+拉麵競技場",
-                    hours: "11:00 - 23:00",
-                    pricing: {
-                        adult: "單點約 800 ~ 1,500 日圓",
-                        child: "小童拉麵約 500 日圓",
-                        senior: "同成人價",
-                        note: "無門票限制，自由消費。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 備有兒童餐椅及餐具，可選調味清淡拉麵或香甜叉燒飯。",
-                    seniorTip: "👵 可請店家將湯頭調淡，5樓有無障礙電梯直達，出入方便。"
-                }
-            ],
-            "2-0": [
-                {
-                    name: "福岡 teamLab Forest",
-                    time: "10:00 - 13:00",
-                    image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "teamLab沉浸式數位藝術森林",
-                    desc: "位於福岡巨蛋旁的 Boss E・ZO 娛樂大樓內。teamLab Forest 分為「捕獲並收集的森林」和「運動森林」。遊客可以用手機捕捉光影小動物，是超夢幻的拍照與體驗景點。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=teamLab+Forest+Fukuoka",
-                    hours: "11:00 - 20:00",
-                    pricing: {
-                        adult: "2,200 日圓",
-                        child: "中小學生 800 日圓 / 3歲以下免費",
-                        senior: "同成人價",
-                        note: "8大3小試算：8大*2200 + 2小*800 = 19,200 日圓。"
-                    },
-                    calcEstimate: 19200,
-                    kidsTip: "👶 絢麗的光影和互動投射讓小孩像捉迷藏一樣興奮！部分高低不平路段需小心行走。",
-                    seniorTip: "👵 室內冷氣充足。雖然有高低起伏的光影地面，但可以走平緩觀賞通道，奇幻景色十分新鮮。"
-                }
-            ],
-            "2-1": [],
-            "2-2": [],
-            "2-3": [],
-            "3-0": [
-                {
-                    name: "別府鶴見岳索道 (Beppu Ropeway)",
-                    time: "10:30 - 13:30",
-                    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "搭乘大型纜車直達鶴見岳山頂",
-                    desc: "搭乘西日本最大級的 101 人座纜車，僅需 10 分鐘即可登上標高 1375 米的鶴見岳山頂。山頂上可飽覽別府灣、別府市區以及阿蘇山群的宏偉景色，四季皆有不同美景。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=別府鶴見岳索道",
-                    hours: "09:00 - 17:00",
-                    pricing: {
-                        adult: "往返 1,800 日圓",
-                        child: "4歲以上往返 900 日圓 / 4歲以下免費",
-                        senior: "65歲以上往返 1,600 日圓 (需證件)",
-                        note: "8大3小試算：6大*1800 + 2長者*1600 + 2小*900 = 15,800 日圓。"
-                    },
-                    calcEstimate: 15800,
-                    kidsTip: "👶 大纜車平穩舒適，車廂內可推推車進入，幼兒看著窗外爬升會非常新奇。",
-                    seniorTip: "👵 免去登山勞累，下了纜車即是展望台，十分平坦好走，極為推薦長輩參觀。"
-                }
-            ],
-            "3-1": [
-                {
-                    name: "由布院昭和館",
-                    time: "14:30 - 17:00",
-                    image: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "重溫日本昭和時代的復古街景",
-                    desc: "位於湯之坪街道旁，館內重現了日本昭和時代的教室、理髮廳、派出所、郵局等復古街景。非常適合帶長輩來懷舊，小孩子看古早玩具也覺得新奇趣味。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=由布院昭和館",
-                    hours: "09:00 - 17:00",
-                    pricing: {
-                        adult: "800 日圓",
-                        child: "4歲以上 400 日圓",
-                        senior: "同成人價",
-                        note: "室內拍照景點，無氣候影響。"
-                    },
-                    calcEstimate: 7200,
-                    kidsTip: "👶 有許多古早遊戲機和糖果玩具，對5歲小孩來說非常新鮮好玩。",
-                    seniorTip: "👵 勾起長輩年輕回憶，室內平坦，有許多舊式用品可以拍照留念。"
-                }
-            ],
-            "3-2": [],
-            "4-0": [
-                {
-                    name: "別府灶地獄 (Kamado Jigoku)",
-                    time: "10:40 - 12:00",
-                    image: "https://www.viviyu.com/wp-content/uploads/2023/11/1-13.jpg",
-                    imageDesc: "一次看完多種地獄溫泉景觀",
-                    desc: "別府灶地獄包含了 1 丁目到 6 丁目多種不同顏色的溫泉，還能體驗飲用溫泉水、吸溫泉蒸汽，以及享受免費足湯與地熱腳部蒸浴。是地獄溫泉中最有趣、體驗最多樣的一站。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=別府灶地獄",
-                    hours: "08:00 - 17:00",
-                    pricing: {
-                        adult: "450 日圓",
-                        child: "中小學生 200 日圓 / 幼兒免費",
-                        senior: "同成人價",
-                        note: "8大3小試算：8 * 450 = 3,600 日圓。"
-                    },
-                    calcEstimate: 3600,
-                    kidsTip: "👶 導覽人員會現場表演吹煙，白煙瞬間爆發的奇景會讓孩子們開懷大笑！",
-                    seniorTip: "👵 有多種足湯 and 蒸氣腳浴，並有極具特色的溫泉皮蛋和溫泉布丁可在此享用。"
-                }
-            ],
-            "4-1": [
-                {
-                    name: "別府海濱砂湯",
-                    time: "12:00 - 13:30",
-                    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "別府灣畔天然海濱沙灘溫泉砂浴",
-                    desc: "穿著浴衣躺在海邊，由服務人員用溫泉加熱過的黑色海沙覆蓋全身，一邊聽著海浪聲，一邊感受全身出汗的舒爽排毒體驗。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=別府海濱砂湯",
-                    hours: "08:30 - 18:00",
-                    pricing: {
-                        adult: "1,500 日圓",
-                        child: "不建議太小幼兒體驗",
-                        senior: "同成人價 1,500 日圓",
-                        note: "8位大人門票試算：12,000 日圓。小孩不宜。"
-                    },
-                    calcEstimate: 12000,
-                    kidsTip: "👶 幼童不宜，可在旁邊防波堤玩沙或由部分家長在休息室輪流照看。",
-                    seniorTip: "👵 砂溫熱重壓對促進血液循環、舒緩關節痛極佳，長輩一定會非常喜愛。"
-                }
-            ],
-            "4-2": [],
-            "5-0": [
-                {
-                    name: "太宰府天滿宮",
-                    time: "09:30 - 11:30",
-                    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "學問之神天滿宮御本殿",
-                    desc: "祭祀學問之神菅原道真的全國天滿宮總本社。表參道非常熱鬧，可以品嚐現烤的特產梅枝餅（梅ヶ枝餅），並參觀由大師隈研吾設計的木造星巴克。庭園古木參天，太鼓橋與菖蒲池景色優美。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=太宰府天滿宮",
-                    hours: "06:30 - 19:00",
-                    pricing: {
-                        adult: "免費參拜 (免門票)",
-                        child: "免費",
-                        senior: "免費",
-                        note: "表參道步行街鋪設平整，但有部分碎石子神社區，推車可避開碎石繞行。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 神社前的「御神牛」銅像，傳說摸牛頭能變聰明，小朋友會很喜歡去排隊摸摸牛角。",
-                    seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在星巴克或日式茶屋坐下休息，極具文化氛圍。"
-                }
-            ],
-            "5-1": [
-                {
-                    name: "天神地下街大採買",
-                    time: "11:30 - 14:00",
-                    image: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "歐洲風格的繁華天神地下街",
-                    desc: "全日本數一數二的大型地下商圈，歐式石磚路與高雅燈飾非常華麗。這裡連接了天神區所有主要百貨公司，有數百家精品服飾、藥妝、母嬰用品店與餐廳，下雨天也能暢快採購。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=天神地下街",
-                    hours: "10:00 - 20:00 (餐廳至21:00)",
-                    pricing: {
-                        adult: "免費進入",
-                        child: "免費",
-                        senior: "免費",
-                        note: "全地下道配有無障礙直升電梯，推嬰兒車或行動不便者均能暢行無阻。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 地下街平坦且避風雨，各百貨互通，育嬰設施完善，方便隨時為嫩嬰哺乳換尿布。",
-                    seniorTip: "👵 全程免受日曬雨淋之苦，地下街遍布座椅與咖啡廳，長輩逛累了隨時有地方坐下歇息。"
-                }
-            ],
-            "5-2": [
-                {
-                    name: "提前前往機場免稅店大採購",
-                    time: "14:00 - 15:30",
-                    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=400&q=80",
-                    imageDesc: "福岡機場國際線免稅店伴手禮採購",
-                    desc: "提早 2.5 小時抵達福岡機場辦理退稅與登機。福岡機場國際線航廈全新擴建，免稅店極為寬敞漂亮。可以悠閒採購九州名產（如福砂屋長崎蛋糕、一蘭拉麵包、明太子、ROYCE巧克力），免去在市區提行李的辛苦。",
-                    gmap: "https://www.google.com/maps/search/?api=1&query=福岡空港國際線免稅店",
-                    hours: "依航班時間營業",
-                    pricing: {
-                        adult: "免費進入",
-                        child: "免費",
-                        senior: "免費",
-                        note: "伴手禮自由採購消費。"
-                    },
-                    calcEstimate: 0,
-                    kidsTip: "👶 批關後有親子休息區與小型遊戲墊，上機前能安撫小孩。",
-                    seniorTip: "👵 批關後可申請機場免費輪椅服務，並可在免稅店旁的咖啡廳坐著休息等待登機。"
-                }
-            ]
-        };
-
-        
         const hotelsOption1 = [
             {
                 days: "Day 1 & Day 2 (熊本)",
@@ -1802,7 +1663,7 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
         ];
 
 
-        
+
         const diningOption1 = [
             {
                 name: "阿蘇赤牛蓋飯 (あか牛丼)",
@@ -1864,7 +1725,7 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
         ];
 
 
-        
+
         const tipsOption1 = [
             {
                 title: "1. 午睡結界（神聖不可侵犯！）",
@@ -1916,24 +1777,32 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
         function renderHotels() {
             const list = document.getElementById('hotelsList');
             const data = currentOption === 1 ? hotelsOption1 : hotelsOption2;
-            
+
             // Update subtitle dynamically as well
             document.getElementById('hotelsSubtitle').innerText = currentOption === 1
                 ? "考慮長輩體力與幼兒睡眠，行程採不折返線性規劃，避開每日舟車勞頓。"
                 : "避開每日換房，以福岡為中心輻射出行，搭配由由布院溫泉一泊二食。";
 
             list.innerHTML = data.map((hotel, idx) => `
-                <div class="bg-white rounded-3xl border border-slate-100/80 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 animate-fade-in">
-                    <div class="relative h-44 w-full bg-slate-100">
+                <div class="bg-white rounded-3xl border border-slate-100/80 border-l-4 border-l-indigo-500 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 animate-fade-in">
+                    <div class="mx-4 mt-4 rounded-2xl overflow-hidden shadow-inner relative h-40 bg-slate-100">
                         <img src="${hotel.image}" alt="${hotel.title}" class="w-full h-full object-cover">
-                        <span class="absolute top-3 left-3 bg-primary-500 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow">${hotel.days}</span>
+                        <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-sm">${hotel.days}</span>
                     </div>
-                    <div class="p-5 space-y-3.5">
-                        <h3 class="font-extrabold text-base text-slate-900 leading-snug">${hotel.title}</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">${hotel.desc}</p>
-                        <div class="bg-slate-50 p-3.5 rounded-2xl space-y-2 text-xs border border-slate-100/50">
-                            <p class="text-slate-600 flex items-start gap-1"><span class="font-extrabold text-primary-700 flex items-center gap-1.5 flex-shrink-0"><i class="fa-solid fa-child-reaching text-xs text-primary-500"></i> 育兒設施：</span>${hotel.kidsTip}</p>
-                            <p class="text-slate-600 flex items-start gap-1"><span class="font-extrabold text-accent-700 flex items-center gap-1.5 flex-shrink-0"><i class="fa-solid fa-person-cane text-xs text-accent-500"></i> 長輩防護：</span>${hotel.seniorTip}</p>
+                    <div class="p-5 space-y-4">
+                        <div>
+                            <h3 class="font-extrabold text-base text-slate-900 leading-snug">${hotel.title}</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed whitespace-pre-line">${hotel.desc}</p>
+                        </div>
+                        <div class="space-y-2.5">
+                            <div class="bg-indigo-50/40 p-3 rounded-2xl border border-indigo-100/40 text-xs flex gap-2">
+                                <span class="font-extrabold text-indigo-950 flex items-center gap-1.5 flex-shrink-0"><i class="fa-solid fa-child-reaching text-indigo-500"></i> 育兒設施：</span>
+                                <span class="text-slate-600 leading-relaxed">${hotel.kidsTip}</span>
+                            </div>
+                            <div class="bg-accent-50/40 p-3 rounded-2xl border border-accent-100/30 text-xs flex gap-2">
+                                <span class="font-extrabold text-accent-950 flex items-center gap-1.5 flex-shrink-0"><i class="fa-solid fa-person-cane text-accent-500"></i> 長輩防護：</span>
+                                <span class="text-slate-600 leading-relaxed">${hotel.seniorTip}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1946,20 +1815,28 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
             const data = currentOption === 1 ? diningOption1 : diningOption2;
 
             list.innerHTML = data.map(food => `
-                <div class="bg-white rounded-3xl border border-slate-100/80 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 animate-fade-in">
-                    <div class="relative h-44 w-full bg-slate-100">
+                <div class="bg-white rounded-3xl border border-slate-100/80 border-l-4 border-l-amber-500 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 animate-fade-in">
+                    <div class="mx-4 mt-4 rounded-2xl overflow-hidden shadow-inner relative h-40 bg-slate-100">
                         <img src="${food.image}" alt="${food.name}" class="w-full h-full object-cover">
-                        <span class="absolute top-3 left-3 bg-accent-500 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow">${food.type}</span>
+                        <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-sm">${food.type}</span>
                     </div>
-                    <div class="p-5 space-y-3">
-                        <h3 class="font-extrabold text-base text-slate-900 flex justify-between items-center">
-                            <span>${food.name}</span>
-                            <span class="text-[10px] text-accent-600 bg-accent-50 font-bold px-2 py-0.5 rounded-md border border-accent-100/30">${food.degree}</span>
-                        </h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">${food.desc}</p>
-                        <div class="bg-slate-50 p-3.5 rounded-2xl space-y-2 text-xs border border-slate-100/50">
-                            <p class="text-slate-600 flex items-start gap-1"><span class="font-extrabold text-primary-700 flex items-center gap-1.5 flex-shrink-0"><i class="fa-solid fa-child-reaching text-xs text-primary-500"></i> 幼童指南：</span>${food.kidsTip}</p>
-                            <p class="text-slate-600 flex items-start gap-1"><span class="font-extrabold text-accent-700 flex items-center gap-1.5 flex-shrink-0"><i class="fa-solid fa-person-cane text-xs text-accent-500"></i> 長者指南：</span>${food.seniorTip}</p>
+                    <div class="p-5 space-y-4">
+                        <div>
+                            <h3 class="font-extrabold text-base text-slate-900 flex justify-between items-center">
+                                <span>${food.name}</span>
+                                <span class="text-[10px] text-amber-600 bg-amber-50 font-bold px-2.5 py-0.5 rounded-md border border-amber-100/30">${food.degree}</span>
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed whitespace-pre-line">${food.desc}</p>
+                        </div>
+                        <div class="space-y-2.5">
+                            <div class="bg-amber-50/40 p-3 rounded-2xl border border-amber-100/40 text-xs flex gap-2">
+                                <span class="font-extrabold text-amber-950 flex items-center gap-1.5 flex-shrink-0"><i class="fa-solid fa-child-reaching text-amber-500"></i> 幼童指南：</span>
+                                <span class="text-slate-600 leading-relaxed">${food.kidsTip}</span>
+                            </div>
+                            <div class="bg-slate-50/50 p-3 rounded-2xl border border-slate-100/50 text-xs flex gap-2">
+                                <span class="font-extrabold text-slate-900 flex items-center gap-1.5 flex-shrink-0"><i class="fa-solid fa-person-cane text-slate-500"></i> 長者指南：</span>
+                                <span class="text-slate-600 leading-relaxed">${food.seniorTip}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1972,20 +1849,23 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
             const data = currentOption === 1 ? tipsOption1 : tipsOption2;
 
             list.innerHTML = data.map(tip => `
-                <div class="bg-white rounded-3xl p-5 border border-slate-100/80 space-y-3 shadow-sm hover:shadow-md transition-shadow duration-300 animate-fade-in">
-                    <h4 class="font-extrabold text-slate-900 text-sm flex items-center gap-2">
-                        <i class="${tip.icon} text-base"></i> ${tip.title}
-                    </h4>
-                    <p class="text-xs text-slate-500 leading-relaxed">${tip.desc}</p>
+                <div class="bg-white rounded-3xl p-5 border border-slate-100/80 border-l-4 border-l-indigo-500 flex gap-4 hover:shadow-md transition-shadow duration-300 animate-fade-in">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-2xl bg-indigo-50 text-indigo-600 flex-shrink-0 shadow-sm border border-indigo-100/30">
+                        <i class="${tip.icon} text-lg"></i>
+                    </div>
+                    <div class="space-y-1.5 flex-1 min-w-0">
+                        <h4 class="font-extrabold text-slate-900 text-sm leading-snug">${tip.title}</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed whitespace-pre-line">${tip.desc}</p>
+                    </div>
                 </div>
             `).join('');
         }
 
         function switchOption(optionNum) {
             if (currentOption === optionNum) return;
-            
+
             currentOption = optionNum;
-            tourData = currentOption === 1 ? tourDataOption1 : tourDataOption2;
+            tourData = tourDataOption1;
             currentDay = 1;
 
             // Update UI buttons styling with sliding highlight
@@ -1997,7 +1877,7 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
                 if (highlight) highlight.style.transform = 'translateX(0)';
                 btn1.className = "flex-1 py-1.5 rounded-xl text-xs font-black transition-all duration-300 z-10 flex items-center justify-center gap-1.5 text-primary-950 cursor-pointer";
                 btn2.className = "flex-1 py-1.5 rounded-xl text-xs font-black transition-all duration-300 z-10 flex items-center justify-center gap-1.5 text-slate-500 hover:text-slate-800 cursor-pointer";
-                
+
                 const icon1 = btn1.querySelector('i');
                 const icon2 = btn2.querySelector('i');
                 if (icon1) icon1.className = "fa-solid fa-route text-primary-500";
@@ -2006,7 +1886,7 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
                 if (highlight) highlight.style.transform = 'translateX(100%)';
                 btn2.className = "flex-1 py-1.5 rounded-xl text-xs font-black transition-all duration-300 z-10 flex items-center justify-center gap-1.5 text-primary-950 cursor-pointer";
                 btn1.className = "flex-1 py-1.5 rounded-xl text-xs font-black transition-all duration-300 z-10 flex items-center justify-center gap-1.5 text-slate-500 hover:text-slate-800 cursor-pointer";
-                
+
                 const icon1 = btn1.querySelector('i');
                 const icon2 = btn2.querySelector('i');
                 if (icon1) icon1.className = "fa-solid fa-route text-slate-400";
@@ -2014,8 +1894,8 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
             }
 
             // Update budget subtitle
-            document.getElementById('budgetSubtitle').innerText = currentOption === 1 
-                ? '8大(含2位65+長輩) + 2小(5歲) + 1幼(不到2歲)' 
+            document.getElementById('budgetSubtitle').innerText = currentOption === 1
+                ? '8大(含2位65+長輩) + 2小(5歲) + 1幼(不到2歲)'
                 : '8大(含2位65+長輩) + 2小(4歲) + 1幼(1.5歲)';
 
             // Re-render views
@@ -2028,15 +1908,14 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
         }
 
 
-        function initBackups(dataArr, backupData) {
+        function initBackups(dataArr) {
             dataArr.forEach(dayData => {
-                dayData.spots.forEach((spot, spotIdx) => {
-                    const key = `${dayData.day}-${spotIdx}`;
-                    const originalCopy = { ...spot, backups: null };
+                dayData.spots.forEach((spot) => {
+                    const originalCopy = { ...spot, backups: null, backupSpots: null };
                     const backups = [originalCopy];
-                    if (backupData[key]) {
-                        backupData[key].forEach(b => {
-                            backups.push({ ...b, backups: null });
+                    if (spot.backupSpots) {
+                        spot.backupSpots.forEach(b => {
+                            backups.push({ ...b, backups: null, backupSpots: null });
                         });
                     }
                     spot.backups = backups;
@@ -2066,10 +1945,25 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
                     imgSrc = backup.image;
                 }
 
+                // Determine badge class and icon for backup card
+                const type = backup.type || "景點";
+                let badgeClass = "";
+                let typeIcon = "";
+                if (type === "景點") {
+                    badgeClass = "bg-sky-50 text-sky-700 border-sky-100";
+                    typeIcon = "fa-solid fa-camera text-sky-500";
+                } else if (type === "吃喝") {
+                    badgeClass = "bg-amber-50 text-amber-700 border-amber-100";
+                    typeIcon = "fa-solid fa-utensils text-amber-500";
+                } else if (type === "交通") {
+                    badgeClass = "bg-emerald-50 text-emerald-700 border-emerald-100";
+                    typeIcon = "fa-solid fa-van-shuttle text-emerald-500";
+                }
+
                 const card = document.createElement('div');
                 card.className = `p-3.5 rounded-2xl border-2 transition duration-200 cursor-pointer flex gap-3.5 items-center ${isCurrent
-                        ? 'border-primary-500 bg-primary-50/40 shadow-sm'
-                        : 'border-slate-100 bg-white hover:border-slate-200 hover:bg-slate-50'
+                    ? 'border-primary-500 bg-primary-50/40 shadow-sm'
+                    : 'border-slate-100 bg-white hover:border-slate-200 hover:bg-slate-50'
                     }`;
                 card.onclick = () => selectBackupSpot(idx);
 
@@ -2083,9 +1977,12 @@ seniorTip: "👵 表參道散步長度適中，可沿途吃梅枝餅，累了在
                             ${isCurrent ? '<span class="bg-primary-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full flex-shrink-0">當前選擇</span>' : ''}
                         </div>
                         <p class="text-[10px] text-slate-500 line-clamp-2 mt-1 leading-normal">${backup.desc}</p>
-                        <div class="flex items-center gap-2 mt-2 text-[9px] text-slate-400">
-                            <span class="flex items-center gap-0.5"><i class="fa-regular fa-clock"></i> ${backup.time}</span>
-                            <span class="flex items-center gap-0.5 text-primary-600 font-bold bg-primary-50 px-1.5 rounded">${backup.calcEstimate ? '¥' + backup.calcEstimate.toLocaleString() : '免費/自費'}</span>
+                        <div class="flex flex-wrap items-center gap-2 mt-2 text-[9px] text-slate-400">
+                            <span class="inline-flex items-center gap-0.5"><i class="fa-regular fa-clock"></i> ${backup.time}</span>
+                            <span class="inline-flex items-center gap-0.5 text-primary-600 font-bold bg-primary-50 px-1.5 rounded">${backup.calcEstimate ? '¥' + backup.calcEstimate.toLocaleString() : '免費/自費'}</span>
+                            <span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded border ${badgeClass} text-[8px] font-bold">
+                                <i class="${typeIcon}"></i> ${type}
+                            </span>
                         </div>
                     </div>
                 `;
