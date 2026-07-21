@@ -1,4 +1,4 @@
 :HL["/glord.github.io/_next/static/chunks/1y3_7ooyppum4.css","style"]
 :HL["/glord.github.io/_next/static/chunks/3wqqqnlv8udq_.css","style"]
 :HL["/glord.github.io/_next/static/chunks/1c3yjv86925x9.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"t16sfAsJAK0rqsO1TLSZH"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"q_g2Q11BCZ2hWv-Z4dxTj"}
